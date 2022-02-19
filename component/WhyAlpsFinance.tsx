@@ -158,7 +158,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid>
       <Box
         sx={{
-          backgroundImage: "url(union.svg)",
+          backgroundImage: "url(whyAlpsBackground.svg)",
           backgroundSize: "cover",
         }}
         color='white'
