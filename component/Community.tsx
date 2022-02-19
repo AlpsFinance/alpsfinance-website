@@ -71,7 +71,7 @@ const Community: FC = () => {
   return (
     <Grid
       container
-      sx={{ paddingTop: "3rem", paddingBottom: "3rem", pl: "25%", pr: "25%" }}
+      sx={{ paddingTop: "3rem", paddingBottom: "3rem", pl: "25%", pr: "25%"}}
       spacing={3}
       justifyContent="center"
       alignItems="center"

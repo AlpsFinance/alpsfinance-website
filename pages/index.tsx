@@ -135,7 +135,7 @@ const Home: NextPage = () => {
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
       <WhyAlpsFinance isLargeScreen={isLargeScreen}/>
-      <Roadmap />
+      {/* <Roadmap isLargeScreen={isLargeScreen}/> */}
       <Community />
       <Grid
         container
