@@ -1,15 +1,10 @@
-import { FC, Fragment, Key } from "react";
+import { FC, Key } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Box, Button } from "@mui/material";
-import Roadmap from "./Roadmap";
 
 import ButtonBase from "@mui/material/ButtonBase";
-interface FeatureObject {
-  title: string;
-  description: string;
-}
 
 interface Props {
   isLargeScreen: Boolean;
@@ -25,7 +20,9 @@ const showLargePhone = (isRight = false) => {
 const showSmallPhone = () => {
   return (
     <Grid item xs={12} p={0}>
-      <Image src={"/phone.png"} alt='Phone sample' width={271} height={552} />
+      <Grid container justifyContent='center' alignItems='center' pt={1}>
+        <Image src={"/phone.png"} alt='Phone sample' width={271} height={552} />
+      </Grid>
     </Grid>
   );
 };
@@ -97,7 +94,7 @@ const getGridStructure = (
           <ButtonBase
             sx={{
               width: 80,
-              height: 128,
+              height: isLargeScreen ? 128 : 150,
               ml: 2,
             }}
           >
@@ -107,17 +104,28 @@ const getGridStructure = (
                 boxShadow: "0px 3px 11px 3px rgba(18, 209, 6, 0.25)",
               }}
             >
-              <Image src={grid.src} alt={grid.alt} width={72} height={72} />
+              <Image
+                src={grid.src}
+                alt={grid.alt}
+                width={isLargeScreen ? 40 : 30}
+                height={isLargeScreen ? 40 : 30}
+              />
             </Box>
           </ButtonBase>
         </Grid>
         <Grid item xs sm container>
           <Grid item xs container direction='column' spacing={3}>
             <Grid item xs>
-              <Typography variant='h6' fontWeight={600} sx={{ mb: 2 }}>
+              <Typography
+                variant={isLargeScreen ? "h6" : "body1"}
+                fontWeight={600}
+                sx={{ mt: isLargeScreen ? 0 : 2, mb: 2 }}
+              >
                 {grid.header}
               </Typography>
-              <Typography>{grid.body}</Typography>
+              <Typography variant={isLargeScreen ? "body1" : "subtitle2"}>
+                {grid.body}
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -143,7 +151,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             justifyContent='center'
             style={{ minHeight: isLargeScreen ? "60vh" : "auto" }}
           >
-            <Typography variant='h4' fontWeight={600} sx={{ mb: 3 }}>
+            <Typography variant={'h4'} fontWeight={600} sx={{ mb: 3 }}>
               Multi-Chain, Multi-Platform
             </Typography>
             <Typography>
@@ -193,7 +201,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                   borderRadius: 30,
                   color: "#0D7E06",
                   backgroundColor: "white",
-                  py: 2,
+                  py: isLargeScreen ? 2 : 1,
                   px: 4,
                   fontWeight: "bold",
                   width: "fit-content",
@@ -216,7 +224,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           container
           justifyContent='center'
           alignItems='start'
-          sx={{ ml: isLargeScreen ? 1 : 0, mb: 3 }}
+          sx={{ ml: isLargeScreen ? 1 : 0, mb: 3, mt: isLargeScreen ? 0 : 5 }}
         >
           <Typography variant={isLargeScreen ? "h4" : "h6"} fontWeight={600}>
             Why Choose Alps Finance?
@@ -224,7 +232,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
         </Grid>
         <Grid
           container
-          sx={{ pl: isLargeScreen ? 5 : 0, pr: isLargeScreen ? 5 : 0 }}
+          sx={{ pl: isLargeScreen ? 5 : 2, pr: isLargeScreen ? 5 : 2 }}
         >
           {gridData.map((grid, index) => {
             return getGridStructure(grid, index, isLargeScreen);
@@ -232,13 +240,18 @@ const WhyAlpsFinance: FC<Props> = (props) => {
         </Grid>
         <Grid
           container
-          sx={{ pl: isLargeScreen ? 5 : 0, pr: isLargeScreen ? 5 : 0 }}
+          sx={{ pl: isLargeScreen ? 5 : 2, pr: isLargeScreen ? 5 : 2 }}
         >
           {gridDataSecond.map((grid, index) => {
             return getGridStructure(grid, index, isLargeScreen);
           })}
         </Grid>
-        <Grid container justifyContent='center' alignItems='center'>
+        <Grid
+          container
+          justifyContent='center'
+          alignItems='center'
+          sx={{ pl: isLargeScreen ? 0 : 2, pr: isLargeScreen ? 0 : 2 }}
+        >
           {gridDataThird.map((grid, index) => {
             return getGridStructure(grid, index + 1, isLargeScreen);
           })}

@@ -11,6 +11,7 @@ import AppBar from "../component/AppBar";
 import WhyAlpsFinance from "../component/WhyAlpsFinance";
 import Roadmap from "../component/Roadmap";
 import Community from "../component/Community";
+import Footer from "../component/Footer";
 import Image from "next/image";
 import { Box } from "@mui/material";
 import AlpsTokenPresale from "../component/AlpsTokenPresale";
@@ -52,10 +53,11 @@ const Home: NextPage = () => {
           spacing={0}
           alignItems='center'
           justifyContent='center'
-          pt={10}
+          pt={isLargeScreen ? 10 : 3}
           sx={{
             color: "white",
             pb: 5,
+            mb: 5
           }}
           flexDirection='column'
         >
@@ -72,7 +74,7 @@ const Home: NextPage = () => {
                       height: "30vh",
                     }
                   : {
-                      pt: 5,
+                      pt: 0,
                       pb: 5,
                     }
               }
@@ -134,23 +136,10 @@ const Home: NextPage = () => {
         </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
-      <WhyAlpsFinance isLargeScreen={isLargeScreen}/>
-      {/* <Roadmap isLargeScreen={isLargeScreen}/> */}
-      <Community />
-      <Grid
-        container
-        justifyContent='center'
-        alignItems='center'
-        sx={{
-          background: "linear-gradient(to right, #0d7e06, #00bb89)",
-          color: "white",
-          p: 2,
-        }}
-      >
-        <Grid item>
-          <Typography variant='h6'>&copy; 2021 Alps Labs</Typography>
-        </Grid>
-      </Grid>
+      <WhyAlpsFinance isLargeScreen={isLargeScreen} />
+      <Roadmap isLargeScreen={isLargeScreen} />
+      <Community isLargeScreen={isLargeScreen} />
+      <Footer />
     </div>
   );
 };

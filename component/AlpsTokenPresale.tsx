@@ -25,7 +25,7 @@ const AlpsTokenPresale: FC<Props> = (props) => {
         borderRadius: "68px",
         background: "linear-gradient(132.36deg, #0D7E06 3.18%, #002400 74.97%)",
         p: 5,
-        m: isLargeScreen ? 3 : 0
+        m: isLargeScreen ? 3 : 0,
       }}
     >
       <Grid
@@ -37,7 +37,13 @@ const AlpsTokenPresale: FC<Props> = (props) => {
         spacing={3}
       >
         <Grid item xs={12} md={7}>
-          <Grid container justifyContent='left' alignItems='start' py={isLargeScreen ? 3: 0} pr={isLargeScreen ? 10 : 0}>
+          <Grid
+            container
+            justifyContent='left'
+            alignItems='start'
+            py={isLargeScreen ? 3 : 0}
+            pr={isLargeScreen ? 10 : 0}
+          >
             <Typography variant='h4' sx={{ mb: 1 }}>
               $ALPS Token
             </Typography>
