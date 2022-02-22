@@ -18,7 +18,6 @@ const Item = styled(Box)(({ theme }) => ({
 }));
 
 const Roadmap: FC<Props> = (props) => {
-  const theme = useTheme();
   const { isLargeScreen } = props;
 
   return (
@@ -113,10 +112,10 @@ const Roadmap: FC<Props> = (props) => {
                     <Typography
                       variant='h5'
                       color='#12D106'
-                      fontWeight={"bold"}
+                      fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
-                      PHASE 2{" "}
+                      PHASE 2
                     </Typography>
                   </Grid>
                 </Grid>
@@ -170,7 +169,7 @@ const Roadmap: FC<Props> = (props) => {
                     <Typography
                       variant='h5'
                       color='#12D106'
-                      fontWeight={"bold"}
+                      fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
                       PHASE 3
@@ -220,7 +219,7 @@ const Roadmap: FC<Props> = (props) => {
                     <Typography
                       variant='h5'
                       color='#12D106'
-                      fontWeight={"bold"}
+                      fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
                       PHASE 4

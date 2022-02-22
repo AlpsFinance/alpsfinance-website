@@ -3,11 +3,11 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Box, Button } from "@mui/material";
-
 import ButtonBase from "@mui/material/ButtonBase";
 
 interface Props {
   isLargeScreen: Boolean;
+  isMediumScreen: Boolean;
 }
 
 const showLargePhone = (isRight = false) => {
@@ -135,7 +135,7 @@ const getGridStructure = (
   );
 };
 const WhyAlpsFinance: FC<Props> = (props) => {
-  const { isLargeScreen } = props;
+  const { isLargeScreen, isMediumScreen } = props;
   return (
     <Box>
       <Grid
@@ -152,7 +152,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             justifyContent='center'
             style={{ minHeight: isLargeScreen ? "60vh" : "auto" }}
           >
-            <Typography variant={"h4"} fontWeight={600} sx={{ mb: 3 }}>
+            <Typography variant={"h4"} fontWeight={600} sx={{ mb: 3 }} textAlign='center'>
               Multi-Chain, Multi-Platform
             </Typography>
             <Typography>
@@ -167,7 +167,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid>
       <Box
         sx={{
-          backgroundImage: isLargeScreen ? "url(whyAlpsBackground.svg)" : "url(whyAlpsBackgroundMobile.svg)",
+          backgroundImage: isMediumScreen ? "url(whyAlpsBackground.svg)" : "url(whyAlpsBackgroundMobile.svg)",
           backgroundSize: "cover",
         }}
         color='white'
@@ -186,7 +186,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
               justifyContent='center'
               style={{ minHeight: isLargeScreen ? "60vh" : "auto" }}
             >
-              <Typography variant='h4' fontWeight={600} sx={{ mb: 3 }}>
+              <Typography variant='h4' fontWeight={600} sx={{ mb: 3 }} textAlign='center'>
                 Community
               </Typography>
               <Typography>

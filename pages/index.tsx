@@ -18,7 +18,8 @@ import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('sm'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     <div className={styles.container}>
@@ -84,7 +85,7 @@ const Home: NextPage = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography variant={isLargeScreen ? "h5" : "body1"} mx={2}>
+                <Typography variant={isLargeScreen ? "h5" : "body1"} mx={5}>
                   Alps is the simplest way to build and manage your entire DeFi
                   + NFT portfolio across multiple chains from one dashboard.
                   Explore the world of decentralized finance today.
@@ -135,7 +136,7 @@ const Home: NextPage = () => {
         </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
-      <WhyAlpsFinance isLargeScreen={isLargeScreen} />
+      <WhyAlpsFinance isLargeScreen={isLargeScreen} isMediumScreen={isMediumScreen}/>
       <Roadmap isLargeScreen={isLargeScreen} />
       <Community isLargeScreen={isLargeScreen} />
       <Footer />
