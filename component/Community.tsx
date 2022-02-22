@@ -43,7 +43,7 @@ const Community: FC<Props> = (props) => {
                   textTransform: "none",
                 }}
                 onClick={() => {
-                  const AlpsFinanceAppURL = "https://app.alps.finance";
+                  const AlpsFinanceAppURL = "https://discord.gg/zXbpgZSzCD";
                   window.open(AlpsFinanceAppURL, "_blank") ||
                     window.location.replace(AlpsFinanceAppURL);
                 }}

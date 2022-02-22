@@ -48,10 +48,12 @@ const AlpsTokenPresale: FC<Props> = (props) => {
               $ALPS Token
             </Typography>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              massa lacus, sodales ornare senectus adipiscing ullamcorper.
-              Gravida euismod sem ac felis id pellentesque felis ipsum lorem.
-              Mauris, placerat auctor praesent nascetur netus risus.{" "}
+              $Alps Token is the native utility token of the Alps Finance
+              platform which gives you the opportunity to stake in order to earn
+              more of the token; get reduced fees for holding our token; earn
+              rewards for participating in our member area, gain special access
+              to features and exclusive services, aswell as use to participate
+              in token sales on our (future) launchpad platform
             </Typography>
           </Grid>
         </Grid>

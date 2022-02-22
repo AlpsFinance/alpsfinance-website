@@ -15,7 +15,7 @@ const Item = styled(Box)(({ theme }) => ({
   paddingLeft: 0,
   textAlign: "center",
   borderRadius: "16px",
-  minHeight: "445px"
+  minHeight: "445px",
 }));
 
 const Roadmap: FC<Props> = (props) => {
@@ -243,6 +243,21 @@ const Roadmap: FC<Props> = (props) => {
                   <li>
                     <Typography variant='subtitle2'>
                       DeFi, DAO, and NFT expansion
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant='subtitle2'>
+                      Alps Foundation Launch
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant='subtitle2'>
+                      Alps Launchpad Launch
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant='subtitle2'>
+                      Mobile App Launch
                     </Typography>
                   </li>
                 </ul>

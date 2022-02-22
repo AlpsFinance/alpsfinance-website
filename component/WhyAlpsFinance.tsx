@@ -35,9 +35,9 @@ const gridData = [
   },
   {
     src: "/setting.svg",
-    alt: "Easily Manage Accounts Icon",
-    header: "Easily Manage Accounts",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus eget viverra tempus commodo, semper imperdiet egestas placerat.",
+    alt: "Easy Account Management Icon",
+    header: "Easy Account Management",
+    body: "We are making it easy for you to manage your account from a simple user-friendly interface. You no longer need to hop from one protocol to another when you can simply manage and invest all your assets from one dashboard.",
   },
 ];
 const gridDataSecond = [
@@ -45,13 +45,13 @@ const gridDataSecond = [
     src: "/integration.svg",
     alt: "DeFi Integration Icon",
     header: "DeFi Integration",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus eget viverra tempus commodo, semper imperdiet egestas placerat.",
+    body: "Every week you can expect us to role out new DeFi protocol integrations to increase your investment options as we expand our partnership across the ecosystem.",
   },
   {
     src: "/database.svg",
     alt: "Multi-Asset Deriviatives Icon",
     header: "Multi-Asset Deriviatives",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus eget viverra tempus commodo, semper imperdiet egestas placerat.",
+    body: "At the core of our mission is giving you unlimited options. We aim to remove your worries that you might be missing out on some opportunity which is why we're our platform multichain + crosschain so you have multiple assets to explore.",
   },
 ];
 const gridDataThird = [
@@ -59,7 +59,7 @@ const gridDataThird = [
     src: "/marketplace.svg",
     alt: "Metaverse Marketplace Icon",
     header: "Metaverse Marketplace",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus eget viverra tempus commodo, semper imperdiet egestas placerat.",
+    body: "It's no secret that the Metaverse is the new frontier in the crypto space which is why we're providing you the opportunity to provide liquidity, stake, and invest in a variety of your favorite metaverse platform.",
   },
 ];
 
@@ -119,7 +119,7 @@ const getGridStructure = (
               <Typography
                 variant={isLargeScreen ? "h6" : "body1"}
                 fontWeight={600}
-                sx={{ mt: isLargeScreen ? 0 : 2, mb: 2 }}
+                sx={{ mt: isLargeScreen ? 1 : 2, mb: 1 }}
               >
                 {grid.header}
               </Typography>
@@ -151,7 +151,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             justifyContent='center'
             style={{ minHeight: isLargeScreen ? "60vh" : "auto" }}
           >
-            <Typography variant={'h4'} fontWeight={600} sx={{ mb: 3 }}>
+            <Typography variant={"h4"} fontWeight={600} sx={{ mb: 3 }}>
               Multi-Chain, Multi-Platform
             </Typography>
             <Typography>
@@ -166,7 +166,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid>
       <Box
         sx={{
-          backgroundImage: "url(whyAlpsBackground.svg)",
+          backgroundImage: isLargeScreen ? "url(whyAlpsBackground.svg)" : "url(whyAlpsBackgroundMobile.svg)",
           backgroundSize: "cover",
         }}
         color='white'
@@ -177,7 +177,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           sx={{ pl: isLargeScreen ? 10 : 5, pr: 4, mt: isLargeScreen ? 1 : 0 }}
           spacing={3}
         >
-          <Grid item lg={6} xs={12} ml={isLargeScreen ? "8rem" : 0}>
+          <Grid item lg={6} xs={12} ml={isLargeScreen ? "8rem" : 0} mr={isLargeScreen ? 0 : "2rem"}>
             <Grid
               container
               spacing={0}
@@ -189,10 +189,11 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                 Community
               </Typography>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
-                nec risus eu, lacus. Curabitur vel tortor et vivamus a dolor
-                integer tellus neque. Risus, augue nisl, diam diam, dui. At urna
-                feugiat proin pellentesque ut sagittis purus viverra felis.
+                We believe in the power of community, which is why a core
+                component of our platform is enabling connection and interaction
+                with other users. You are not alone as we are giving you the
+                opportunity to connect, follow, engage, learn and compete with
+                other users who are investing through our platform.
               </Typography>
               <Button
                 color='inherit'

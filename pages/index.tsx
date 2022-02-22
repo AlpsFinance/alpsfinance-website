@@ -26,13 +26,12 @@ const Home: NextPage = () => {
         <title>Alps Finance | Decentralized Social Investing Platform</title>
         <meta
           name='description'
-          content='Alps Finance is a Crosschain Asset Tracker and Social Investing Platform to learn, socialize, and manage their finance on the blockchain.'
+          content='Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today.'
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Box
         style={{
-          // background: "linear-gradient(rgba(13, 126, 6, 1), rgba(0, 36, 0, 1))",
           background: isLargeScreen
             ? "linear-gradient(169.07deg, #0D7E06 18.8%, #002400 93.74%)"
             : "linear-gradient(130.49deg, #0D7E06 -6.02%, #002400 54.94%)",
@@ -57,7 +56,7 @@ const Home: NextPage = () => {
           sx={{
             color: "white",
             pb: 5,
-            mb: 5
+            mb: 5,
           }}
           flexDirection='column'
         >
@@ -85,8 +84,10 @@ const Home: NextPage = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography variant={isLargeScreen ? "h4" : "caption"}>
-                  All-in-one dApp to BUY, SELL, TRADE and SHARE!
+                <Typography variant={isLargeScreen ? "h5" : "body2"} mx={2}>
+                  Alps is the simplest way to build and manage your entire DeFi
+                  + NFT portfolio across multiple chains from one dashboard.
+                  Explore the world of decentralized finance today.
                 </Typography>
               </Grid>
               <Grid
@@ -126,11 +127,9 @@ const Home: NextPage = () => {
           <Grid item>
             <Image
               src={isLargeScreen ? "/laptop.png" : "/phone.png"}
-              alt='Picture of the author'
+              alt='Picture of Alps Finance UI'
               width={isLargeScreen ? 948 : 271}
               height={isLargeScreen ? 520.07 : 552}
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
             />
           </Grid>
         </Grid>
