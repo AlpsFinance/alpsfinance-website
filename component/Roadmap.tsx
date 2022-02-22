@@ -13,9 +13,8 @@ const Item = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(3),
   paddingLeft: 0,
-  textAlign: "center",
   borderRadius: "16px",
-  minHeight: "445px",
+  minHeight: "537px",
 }));
 
 const Roadmap: FC<Props> = (props) => {
@@ -32,7 +31,7 @@ const Roadmap: FC<Props> = (props) => {
         spacing={3}
       >
         <Grid item>
-          <Typography variant='h3' align='center'>
+          <Typography variant='h4' fontWeight={600} align='center'>
             <b>Roadmap</b>
           </Typography>
         </Grid>
@@ -60,7 +59,7 @@ const Roadmap: FC<Props> = (props) => {
                     <Typography
                       variant='h5'
                       color='#12D106'
-                      fontWeight={"bold"}
+                      fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
                       PHASE 1
@@ -69,32 +68,32 @@ const Roadmap: FC<Props> = (props) => {
                 </Grid>
                 <ul>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Launch Twitter, Telegram, and Discord communities
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Launch landing page for pre-sale and airdrop
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Smart contract for $ALPS token
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       V1 of dApp for multi-chain token and NFTs storage in FTM
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       First phase of Airdrop
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Publish first whitepaper Open pre-sale
                     </Typography>
                   </li>
@@ -123,35 +122,35 @@ const Roadmap: FC<Props> = (props) => {
                 </Grid>
                 <ul>
                   <li>
-                    <Typography variant='subtitle2'>Close pre-sale</Typography>
+                    <Typography variant='subtitle1'>Close pre-sale</Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>Start IDO</Typography>
+                    <Typography variant='subtitle1'>Start IDO</Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Build Multi-chain support in AVAX, BSC, and ETH
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Integrate with lending and borrowing platform such as
                       Abracadabra
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Social investing platform launch for sharing your
                       investment advice and other activities
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Marketing contents for onboarding new crypto investors
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Open $ALPS staking
                     </Typography>
                   </li>
@@ -180,28 +179,28 @@ const Roadmap: FC<Props> = (props) => {
                 </Grid>
                 <ul>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       DAO proposals begin, tokenomics, treasury management, and
                       innovation fund deployment.
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Enhance the social investing platform launch further
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Receive audits for all smart contracts
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Integration with more DeFi tools
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Connect with bridges
                     </Typography>
                   </li>
@@ -230,33 +229,33 @@ const Roadmap: FC<Props> = (props) => {
                 </Grid>
                 <ul>
                   <li>
-                    <Typography variant='subtitle2'>Yield Optimizer</Typography>
+                    <Typography variant='subtitle1'>Yield Optimizer</Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Listing in centralised exchanges
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>More audits</Typography>
+                    <Typography variant='subtitle1'>More audits</Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       DeFi, DAO, and NFT expansion
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Alps Foundation Launch
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Alps Launchpad Launch
                     </Typography>
                   </li>
                   <li>
-                    <Typography variant='subtitle2'>
+                    <Typography variant='subtitle1'>
                       Mobile App Launch
                     </Typography>
                   </li>

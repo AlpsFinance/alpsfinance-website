@@ -111,7 +111,7 @@ const Footer: FC = () => {
         </Grid>
         <Grid container justifyContent='center' alignItems='center' sx={{mt: 1}}>
           <Grid item>
-            <Typography>&copy; 2021 Alps Labs</Typography>
+            <Typography variant="body2">&copy; 2021 Alps Labs</Typography>
           </Grid>
         </Grid>
       </Grid>

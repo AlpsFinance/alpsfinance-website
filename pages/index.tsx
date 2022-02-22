@@ -84,7 +84,7 @@ const Home: NextPage = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography variant={isLargeScreen ? "h5" : "body2"} mx={2}>
+                <Typography variant={isLargeScreen ? "h5" : "body1"} mx={2}>
                   Alps is the simplest way to build and manage your entire DeFi
                   + NFT portfolio across multiple chains from one dashboard.
                   Explore the world of decentralized finance today.

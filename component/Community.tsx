@@ -15,8 +15,8 @@ const Community: FC<Props> = (props) => {
   return (
     <Box sx={{mb: "3rem"}}>
       <Grid container justifyContent='center' alignItems='center'>
-        <Grid item xs={12} md={6}>
-          <Typography variant={isLargeScreen ? 'h6' : 'body2'} align='center'>
+        <Grid item xs={10} md={6}>
+          <Typography variant={isLargeScreen ? 'h6' : 'body1'} align='center'>
             Learn more about Alps Finance, chat with the team, others in the
             community, and have your say in shaping the future of decentralized
             social investing.

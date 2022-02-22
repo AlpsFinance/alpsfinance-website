@@ -87,6 +87,7 @@ const getGridStructure = (
         borderRadius: "3px",
       }}
       mb={2}
+      pb={2}
       mr={isLargeScreen ? 1 : 0}
     >
       <Grid container spacing={2}>
@@ -123,7 +124,7 @@ const getGridStructure = (
               >
                 {grid.header}
               </Typography>
-              <Typography variant={isLargeScreen ? "body1" : "subtitle2"}>
+              <Typography>
                 {grid.body}
               </Typography>
             </Grid>
