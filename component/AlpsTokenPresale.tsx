@@ -39,12 +39,12 @@ const AlpsTokenPresale: FC<Props> = (props) => {
         <Grid item xs={12} md={7}>
           <Grid
             container
-            justifyContent='left'
-            alignItems='start'
+            direction='column'
+            justifyContent='center'
             py={isLargeScreen ? 3 : 0}
             pr={isLargeScreen ? 10 : 0}
           >
-            <Typography variant='h4' fontWeight={600} sx={{ mb: 1 }}>
+            <Typography variant='h4' fontWeight={600} sx={{ mb: 1 }} textAlign='center'>
               $ALPS Token
             </Typography>
             <Typography>
