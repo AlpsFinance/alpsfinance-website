@@ -12,6 +12,7 @@ import WhyAlpsFinance from "../component/WhyAlpsFinance";
 import Roadmap from "../component/Roadmap";
 import Community from "../component/Community";
 import Footer from "../component/Footer";
+import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
 import { Box } from "@mui/material";
 import AlpsTokenPresale from "../component/AlpsTokenPresale";
@@ -139,6 +140,7 @@ const Home: NextPage = () => {
       <WhyAlpsFinance isLargeScreen={isLargeScreen} isMediumScreen={isMediumScreen}/>
       <Roadmap isLargeScreen={isLargeScreen} />
       <Community isLargeScreen={isLargeScreen} />
+      <Tokenomics />
       <Footer />
     </div>
   );

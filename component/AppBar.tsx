@@ -2,17 +2,13 @@ import { FC, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AlpsLogo from "./AlpsLogo";
-import { Drawer, Grid } from "@mui/material";
+import { Drawer, Grid, Link } from "@mui/material";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import { Grid3x3, Menu } from "@mui/icons-material";
+import { Menu } from "@mui/icons-material";
 
 const CustomAppBar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +37,7 @@ const CustomAppBar: FC = () => {
     },
     {
       name: "Documentation",
-      url: "",
+      url: "https://docs.alps.finance/",
     },
     {
       name: "Blog",
@@ -62,7 +58,14 @@ const CustomAppBar: FC = () => {
       <List>
         {menus.map((menu, index) => (
           <ListItem button key={index}>
-            <ListItemText primary={menu.name} />
+            <ListItemText
+              primary={menu.name}
+              onClick={() => {
+                const AlpsFinanceAppURL = menu.url;
+                window.open(AlpsFinanceAppURL, "_blank") ||
+                  window.location.replace(AlpsFinanceAppURL);
+              }}
+            />
           </ListItem>
         ))}
       </List>
@@ -112,8 +115,11 @@ const CustomAppBar: FC = () => {
         {menus
           .filter((menu) => menu.name !== "Home")
           .map((menu, index) => (
-            <Typography
+            <Link
               key={index}
+              underline={"none"}
+              color={"white"}
+              href={menu.url}
               sx={{
                 pr: 3,
                 fontWeight: "bold",
@@ -123,7 +129,7 @@ const CustomAppBar: FC = () => {
               }}
             >
               {menu.name}
-            </Typography>
+            </Link>
           ))}
         <Button
           color='inherit'

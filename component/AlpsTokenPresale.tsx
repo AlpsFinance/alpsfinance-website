@@ -44,7 +44,12 @@ const AlpsTokenPresale: FC<Props> = (props) => {
             py={isLargeScreen ? 3 : 0}
             pr={isLargeScreen ? 10 : 0}
           >
-            <Typography variant='h4' fontWeight={600} sx={{ mb: 1 }} textAlign='center'>
+            <Typography
+              variant='h4'
+              fontWeight={600}
+              sx={{ mb: 1 }}
+              textAlign='center'
+            >
               $ALPS Token
             </Typography>
             <Typography>
@@ -170,7 +175,7 @@ const AlpsTokenPresale: FC<Props> = (props) => {
                     textTransform: "none",
                   }}
                   onClick={() => {
-                    const AlpsFinanceAppURL = "https://app.alps.finance";
+                    const AlpsFinanceAppURL = "https://presale.alps.finance";
                     window.open(AlpsFinanceAppURL, "_blank") ||
                       window.location.replace(AlpsFinanceAppURL);
                   }}
