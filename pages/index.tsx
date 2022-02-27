@@ -140,7 +140,7 @@ const Home: NextPage = () => {
       <WhyAlpsFinance isLargeScreen={isLargeScreen} isMediumScreen={isMediumScreen}/>
       <Roadmap isLargeScreen={isLargeScreen} />
       <Community isLargeScreen={isLargeScreen} />
-      <Tokenomics />
+      <Tokenomics isLargeScreen={isLargeScreen} />
       <Footer />
     </div>
   );
