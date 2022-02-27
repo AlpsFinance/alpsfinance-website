@@ -1,5 +1,5 @@
 export const calculateTimeLeft = () => {
-  let difference = +new Date(1646024400000) - +new Date();
+  let difference = +new Date(1646067600000) - +new Date();
 
   let timeLeft = {
     days: 0,
