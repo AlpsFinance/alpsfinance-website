@@ -84,6 +84,7 @@ const Tokenomics: FC<Props> = (props) => {
                 legend: {
                   display: true,
                   position: "bottom",
+                  onClick: (e) => null
                 },
               },
             }}
