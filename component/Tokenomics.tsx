@@ -49,6 +49,7 @@ const options:ApexOptions = {
   },
   legend: {
     fontSize: '20px',
+    fontFamily: "Noto Sans, sans-serif",
     formatter: function(val:any, opts:any) {
       return val + " : " + opts.w.globals.series[opts.seriesIndex] + "% (" + (5 * opts.w.globals.series[opts.seriesIndex] / 100>=1?(5 * opts.w.globals.series[opts.seriesIndex] / 100) + " Billion tokens)": (5 * opts.w.globals.series[opts.seriesIndex] * 10) + " Million tokens)") 
     },
@@ -121,7 +122,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
       >
         <Box
           display="flex"
-          justifyContent="space-between"
+          justifyContent={isLargeScreen? "space-between" : "center"}
           alignItems="center"
           mb={8}
           sx={{
@@ -130,7 +131,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
           }}
         >
           <Box px="10px">
-            <Typography variant="h6" fontWeight={600} align="left" mb={2}>
+            <Typography variant="h6" fontWeight={600} align={isLargeScreen?"left":"center"} mb={2}>
               <b>Token Data:</b>
             </Typography>
             <Box display="flex" alignItems="center" mb={1}>
@@ -191,7 +192,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             padding: '0 10px',
           }}
         >
-          <Typography variant='h6' fontWeight={600} align='left' mb={2}>
+          <Typography variant='h6' fontWeight={600} align={isLargeScreen?"left":"center"} mb={2}>
             <b>Token Distribution:</b>
           </Typography>
           <ReactApexChart options={options} series={series} type="donut" />
