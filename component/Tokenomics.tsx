@@ -17,6 +17,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const options:ApexOptions = {
   chart: {
     type: 'donut',
+    height: 400,
   },
   plotOptions: {
     pie: {
@@ -58,7 +59,7 @@ const options:ApexOptions = {
       radius: 2
     },
     itemMargin: {
-      vertical: 5,
+      vertical: 4,
     }
   },
   stroke: {
@@ -69,13 +70,20 @@ const options:ApexOptions = {
     lineCap: "square"
   },
   responsive: [{
-    breakpoint: 480,
+    breakpoint: 767,
     options: {
       chart: {
-        width: 200
+        height: 750,
       },
       legend: {
-        position: 'bottom'
+        // show: false,
+        position: 'bottom',
+        offsetY: 10,
+        offsetX: 0,
+        horizontalAlign: 'left', 
+        itemMargin: {
+          vertical: 2,
+        }
       }
     }
   }]
@@ -118,10 +126,10 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
           mb={8}
           sx={{
             width: '100%',
-            maxWidth: '768px',
+            maxWidth: '748px',
           }}
         >
-          <Box>
+          <Box px="10px">
             <Typography variant="h6" fontWeight={600} align="left" mb={2}>
               <b>Token Data:</b>
             </Typography>
@@ -157,17 +165,17 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
                 ERC20
               </Typography>
             </Box>
-            <Box display="flex" alignItems="center" mb={1}>
+            <Grid display="flex" alignItems="center" mb={1}>
               <Typography variant="subtitle1" color="#666" width="150px">
                 Explorer:
               </Typography>
               <Typography variant="subtitle1" color="orange">
                 https://ftmscan.com/
               </Typography>
-            </Box>
+            </Grid>
 
           </Box>
-          <Box width="40%" height="260px" position="relative" style={{transform: "scale(1.5)"}}>
+          <Box width="40%" px="10px" height="260px" position="relative" sx={{transform: "scale(1.5)", display : isLargeScreen?'block':'none'}}>
             <Image
               src="/tokenomicsBg.svg"
               alt='Picture of Tokenomics'
@@ -179,7 +187,8 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
         <Box
           sx={{
             width: '100%',
-            maxWidth: '768px',
+            maxWidth: '748px',
+            padding: '0 10px',
           }}
         >
           <Typography variant='h6' fontWeight={600} align='left' mb={2}>
