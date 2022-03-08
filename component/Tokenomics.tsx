@@ -130,12 +130,12 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             maxWidth: '748px',
           }}
         >
-          <Box px="10px">
+          <Box px="10px" display="flex" flexDirection="column">
             <Typography variant="h6" fontWeight={600} align={isLargeScreen?"left":"center"} mb={2}>
               <b>Token Data:</b>
             </Typography>
             <Box display="flex" alignItems="center" mb={1}>
-              <Typography variant="subtitle1" color="#666" width="150px">
+              <Typography variant="subtitle1" flexShrink={0} color="#666" width="150px">
                 Token Ticker:
               </Typography>
               <Typography variant="subtitle1" color="orange" fontWeight={600}>
@@ -143,15 +143,15 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
-              <Typography variant="subtitle1" color="#666" width="150px">
+              <Typography variant="subtitle1" flexShrink={0} color="#666" width="150px">
                 Total supply:
               </Typography>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{wordBreak: 'break-all'}} >
                 5,000,000,000 (Five Billion)
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
-              <Typography variant="subtitle1" color="#666" width="150px">
+              <Typography variant="subtitle1" flexShrink={0} color="#666" width="150px">
                 Platform:
               </Typography>
               <Typography variant="subtitle1">
@@ -159,7 +159,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
-              <Typography variant="subtitle1" color="#666" width="150px">
+              <Typography variant="subtitle1" flexShrink={0} color="#666" width="150px">
                 Token type:
               </Typography>
               <Typography variant="subtitle1">
@@ -167,7 +167,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
               </Typography>
             </Box>
             <Grid display="flex" alignItems="center" mb={1}>
-              <Typography variant="subtitle1" color="#666" width="150px">
+              <Typography variant="subtitle1" flexShrink={0} color="#666" width="150px">
                 Explorer:
               </Typography>
               <Typography variant="subtitle1" color="orange">
