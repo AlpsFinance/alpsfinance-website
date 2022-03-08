@@ -1,11 +1,29 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+// import { Doughnut } from "react-chartjs-2";
 import { Box, Grid, Typography } from "@mui/material";
+// import ReactApexChart from "react-apexcharts";
+import dynamic from 'next/dynamic'
+import { ApexOptions } from "apexcharts";
+import Image from "next/image";
+
+const ReactApexChart = dynamic(
+  () => import('react-apexcharts'),
+  { ssr: false }
+)
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const data = {
+const options:ApexOptions = {
+  chart: {
+    type: 'donut',
+  },
+  plotOptions: {
+    pie: {
+      startAngle: -90,
+      endAngle: 270
+    }
+  },
   labels: [
     "Team",
     "Presale",
@@ -13,46 +31,65 @@ export const data = {
     "Liquidity",
     "Marketing",
     "Early backers",
-    "ALPS Stakers",
+    "Staking Reward",
     "Foundation Reserve",
   ],
-  datasets: [
-    {
-      label: "Percentage",
-      data: [15, 5, 5, 10, 10, 5, 25, 25],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-        "rgba(84, 65, 78, 0.2)",
-        "rgba(227, 178, 60, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-        "rgba(84, 65, 78, 1)",
-        "rgba(227, 178, 60, 1)",
-      ],
-      borderWidth: 1,
+  dataLabels: {
+    enabled: true,
+    formatter: function (val) {
+      return val + "%"
     },
-  ],
-};
+    dropShadow: {
+      enabled: true
+    },
+  },
+  fill: {
+    type: 'gradient',
+  },
+  legend: {
+    fontSize: '20px',
+    formatter: function(val:any, opts:any) {
+      return val + " : " + opts.w.globals.series[opts.seriesIndex] + "% (" + (5 * opts.w.globals.series[opts.seriesIndex] / 100>=1?(5 * opts.w.globals.series[opts.seriesIndex] / 100) + " Billion tokens)": (5 * opts.w.globals.series[opts.seriesIndex] * 10) + " Million tokens)") 
+    },
+    offsetX: -40,
+    offsetY: -25,
+    markers: {
+      offsetX: -4,
+      radius: 2
+    },
+    itemMargin: {
+      vertical: 5,
+    }
+  },
+  stroke: {
+    width: 2,
+    curve: 'smooth',
+    dashArray: 0,
+    colors: undefined,
+    lineCap: "square"
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }]
+}
 
 interface Props {
   isLargeScreen: Boolean;
 }
 
-const Tokenomics: FC<Props> = (props) => {
-  const { isLargeScreen } = props;
+const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
+  const [series, setSeries] = useState<number[]>([15, 5, 5, 10, 10, 5, 25, 25]);
+
   return (
-    <Box mb={2}>
+    <Box mb={2} pb={5}>
       <Grid
         container
         direction='column'
@@ -68,27 +105,87 @@ const Tokenomics: FC<Props> = (props) => {
         </Grid>
       </Grid>
       <Box
-         display="flex"
-         justifyContent="center"
-         alignItems="center"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+        mb={5}
       >
         <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          mb={8}
           sx={{
-            width: isLargeScreen ? "40vw" : "100%",
+            width: '100%',
+            maxWidth: '768px',
           }}
         >
-          <Doughnut
-            data={data}
-            options={{
-              plugins: {
-                legend: {
-                  display: true,
-                  position: "bottom",
-                  onClick: (e) => null
-                },
-              },
-            }}
-          />
+          <Box>
+            <Typography variant="h6" fontWeight={600} align="left" mb={2}>
+              <b>Token Data:</b>
+            </Typography>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#666" width="150px">
+                Token Ticker:
+              </Typography>
+              <Typography variant="subtitle1" color="orange" fontWeight={600}>
+                <b>Alps Token</b>
+              </Typography>
+            </Box>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#666" width="150px">
+                Total supply:
+              </Typography>
+              <Typography variant="subtitle1">
+                5,000,000,000 (Five Billion)
+              </Typography>
+            </Box>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#666" width="150px">
+                Platform:
+              </Typography>
+              <Typography variant="subtitle1">
+                Fantom
+              </Typography>
+            </Box>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#666" width="150px">
+                Token type:
+              </Typography>
+              <Typography variant="subtitle1">
+                ERC20
+              </Typography>
+            </Box>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#666" width="150px">
+                Explorer:
+              </Typography>
+              <Typography variant="subtitle1" color="orange">
+                https://ftmscan.com/
+              </Typography>
+            </Box>
+
+          </Box>
+          <Box width="40%" height="260px" position="relative" style={{transform: "scale(1.5)"}}>
+            <Image
+              src="/tokenomicsBg.svg"
+              alt='Picture of Tokenomics'
+              layout="fill"
+              objectFit="contain"
+            />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: '768px',
+          }}
+        >
+          <Typography variant='h6' fontWeight={600} align='left' mb={2}>
+            <b>Token Distribution:</b>
+          </Typography>
+          <ReactApexChart options={options} series={series} type="donut" />
         </Box>
       </Box>
     </Box>
