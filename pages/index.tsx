@@ -16,6 +16,12 @@ import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
 import { Box } from "@mui/material";
 import AlpsTokenPresale from "../component/AlpsTokenPresale";
+import RedditIcon from '@mui/icons-material/Reddit';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const theme = useTheme();
@@ -133,6 +139,72 @@ const Home: NextPage = () => {
               width={isLargeScreen ? 948 : 271}
               height={isLargeScreen ? 520.07 : 552}
             />
+          </Grid>
+          <Grid sx={{
+            background: 'white',
+            color: '#0D7E06',
+            padding: '10px 20px 5px',
+            borderRadius: 20,
+            boxShadow: '1px 1px 5px rgba(0,0,0,0.4)',
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+            <Link href="https://discord.gg/4vwANffdRr">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 3px'
+              }}>
+                <span className="material-icons" style={{fontSize: '30px'}}>discord</span>
+              </a>
+            </Link>
+            <Link href="https://alpsfinance.medium.com/">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 5px'
+              }}>
+                <span className="material-icons" style={{fontSize: '30px', fontWeight: 900, lineHeight: 0}}>M</span>
+              </a>
+            </Link>
+            <Link href="https://www.reddit.com/u/alpsfinance/">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 5px'
+              }}>
+                <RedditIcon />
+              </a>
+            </Link>
+            <Link href="https://t.me/AlpsFinance">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 5px'
+              }}>
+                <TelegramIcon />
+              </a>
+            </Link>
+            <Link href="https://instagram.com/alpsfinance">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 5px'
+              }}>
+                <InstagramIcon />
+              </a>
+            </Link>
+            <Link href="https://twitter.com/alpsfinance">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 5px'
+              }}>
+                <TwitterIcon />
+              </a>
+            </Link>
+            <Link href="https://github.com/AlpsFinance/">
+              <a target="_blank" style={{
+                color: '#0D7E06',
+                margin: '0 5px'
+              }}>
+                <GitHubIcon />
+              </a>
+            </Link>
           </Grid>
         </Grid>
       </Box>
