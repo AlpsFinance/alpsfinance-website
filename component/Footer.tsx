@@ -11,7 +11,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { FaDiscord, FaMedium, FaInstagram } from "react-icons/fa";
 import { IconType } from "react-icons";
 
-interface SocialMediaObject {
+export interface SocialMediaObject {
   name: string;
   icon:
     | IconType
@@ -22,7 +22,13 @@ interface SocialMediaObject {
   link: string;
 }
 
-const SocialMediaArray: SocialMediaObject[] = [
+export const SocialMediaArray: SocialMediaObject[] = [
+  {
+    name: "discord",
+    icon: FaDiscord,
+    color: "#FF8900",
+    link: "https://discord.gg/4vwANffdRr",
+  },
   {
     name: "reddit",
     icon: RedditIcon,
