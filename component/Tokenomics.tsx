@@ -146,7 +146,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
                 Platform:
               </Typography>
               <Typography variant="subtitle1">
-                Fantom
+                Avalanche C-Chain
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
