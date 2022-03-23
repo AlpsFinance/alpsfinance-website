@@ -32,8 +32,8 @@ const CustomAppBar: FC = () => {
       url: "",
     },
     {
-      name: "Litepaper",
-      url: "",
+      name: "Whitepaper",
+      url: "https://storageapi.fleek.co/yosephks-team-bucket/AlpsFinanceWhitepaper.pdf",
     },
     {
       name: "Documentation",
