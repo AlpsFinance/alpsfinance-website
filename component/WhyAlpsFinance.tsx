@@ -12,8 +12,8 @@ interface Props {
 
 const showLargePhone = (isRight = false) => {
   return (
-    <Grid item p={0} ml={isRight ? 0 : "8rem"} mt={"-5rem"} lg={4}>
-      <Image src={"/phone.png"} alt='Phone sample' width={418} height={850} />
+    <Grid item p={0} ml={isRight ? 0 : "2rem"} mt={"3rem"} lg={0}>
+      <Image src={"/alps-transparent.png"} alt='Phone sample' width={550} height={600} />
     </Grid>
   );
 };
@@ -82,8 +82,7 @@ const getGridStructure = (
       lg={index === 0 ? true : 6}
       xs={12}
       sx={{
-        background: "#002400",
-        boxShadow: "0px 3px 11px 3px rgba(18, 209, 6, 0.25)",
+        background: "#25284B",
         borderRadius: "3px",
       }}
       mb={2}
@@ -102,7 +101,6 @@ const getGridStructure = (
             <Box
               sx={{
                 p: 1,
-                boxShadow: "0px 3px 11px 3px rgba(18, 209, 6, 0.25)",
               }}
             >
               <Image
@@ -120,7 +118,7 @@ const getGridStructure = (
               <Typography
                 variant={isLargeScreen ? "h6" : "body1"}
                 fontWeight={600}
-                sx={{ mt: isLargeScreen ? 1 : 2, mb: 1 }}
+                sx={{ mt: isLargeScreen ? 0 : 2, mb: 0 }}
               >
                 {grid.header}
               </Typography>
@@ -140,7 +138,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
     <Box>
       <Grid
         container
-        sx={{ pl: 5, pr: 5, mt: isLargeScreen ? 1 : 0 }}
+        sx={{ backgroundColor:'#2D325A',pl: 5, pr: 5, mt: isLargeScreen ? 0 : 0 }}
         spacing={3}
       >
         {isLargeScreen ? showLargePhone() : null}
@@ -150,12 +148,16 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             spacing={0}
             direction='column'
             justifyContent='center'
-            style={{ minHeight: isLargeScreen ? "60vh" : "auto" }}
+            style={{ minHeight: isLargeScreen ? "60vh" : "auto", paddingTop:'7rem', paddingLeft:"5rem"}}
           >
-            <Typography variant={"h4"} fontWeight={600} sx={{ mb: 3 }} textAlign='center'>
+            <Typography variant={"h4"} fontWeight={600} sx={{ mb: 0,color:'#ffffff' }} textAlign='center'>
               Multi-Chain, Multi-Platform
             </Typography>
-            <Typography>
+            <Typography sx={{
+              color:"#ffffff",
+              fontSize:"1.5rem",
+              paddingTop:'2rem'
+            }}>
               As we are converging to a multi-chain world, we shall be trying
               our best to support as many (EVM-compatible) chain as possible.
               Furthermore, we shall be making the platform accessible to all
@@ -167,7 +169,8 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid>
       <Box
         sx={{
-          backgroundImage: isMediumScreen ? "url(whyAlpsBackground.svg)" : "url(whyAlpsBackgroundMobile.svg)",
+          backgroundImage: isMediumScreen ? "url(bg.jpg)" : "url(bg.jpg)",
+          backgroundPosition:'center',
           backgroundSize: "cover",
         }}
         color='white'
@@ -175,7 +178,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       >
         <Grid
           container
-          sx={{ pl: isLargeScreen ? 10 : 5, pr: 4, mt: isLargeScreen ? 1 : 0 }}
+          sx={{ pl: isLargeScreen ? 7 : 5, pr: 4, mt: isLargeScreen ? 0: 0 }}
           spacing={3}
         >
           <Grid item lg={6} xs={12} ml={isLargeScreen ? "8rem" : 0} mr={isLargeScreen ? 0 : "2rem"}>
@@ -184,12 +187,15 @@ const WhyAlpsFinance: FC<Props> = (props) => {
               spacing={0}
               direction='column'
               justifyContent='center'
-              style={{ minHeight: isLargeScreen ? "60vh" : "auto" }}
+              style={{ minHeight: isLargeScreen ? "60vh" : "auto",paddingTop:'7rem', paddingBottom:"4rem" }}
             >
               <Typography variant='h4' fontWeight={600} sx={{ mb: 3 }} textAlign='center'>
                 Community
               </Typography>
-              <Typography>
+              <Typography sx={{
+                fontSize:"1.5rem",
+                paddingTop:'2rem'
+              }}>
                 We believe in the power of community, which is why a core
                 component of our platform is enabling connection and interaction
                 with other users. You are not alone as we are giving you the
@@ -201,7 +207,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                 variant='contained'
                 sx={{
                   borderRadius: 30,
-                  color: "#0D7E06",
+                  color: "#25284B",
                   backgroundColor: "white",
                   py: isLargeScreen ? 2 : 1,
                   px: 4,

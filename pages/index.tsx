@@ -34,18 +34,12 @@ const Home: NextPage = () => {
       </Head>
       <Box
         style={{
-          background: isLargeScreen
-            ? "linear-gradient(169.07deg, #0D7E06 18.8%, #002400 93.74%)"
-            : "linear-gradient(130.49deg, #0D7E06 -6.02%, #002400 54.94%)",
-          ...(isLargeScreen
-            ? {
-                borderBottomLeftRadius: "20%",
-                borderBottomRightRadius: "85%",
-              }
-            : {
-                borderBottomLeftRadius: "0%",
-                borderBottomRightRadius: "60%",
-              }),
+          backgroundPosition:'center',
+          backgroundSize:'cover',
+          backgroundImage: isLargeScreen
+            ? 'url(/alps-bg.png)'
+            : "url(/alps-bg.png)",
+          
         }}
       >
         <AppBar />
@@ -58,7 +52,7 @@ const Home: NextPage = () => {
           sx={{
             color: "white",
             pb: 5,
-            mb: 5,
+            mb: 0,
           }}
           flexDirection='column'
         >
@@ -72,7 +66,7 @@ const Home: NextPage = () => {
               sx={
                 isLargeScreen
                   ? {
-                      height: "30vh",
+                      height: "50vh",
                     }
                   : {
                       pt: 0,
@@ -80,61 +74,66 @@ const Home: NextPage = () => {
                     }
               }
             >
-              <Grid item>
+              <Grid item sx={{
+                fontFamily: "'Poppins', sans-serif",
+                color: '#FFFFFF',
+              }}>
                 <Typography variant={isLargeScreen ? "h3" : "h4"}>
                   <b>Decentralized Social Investing</b>
                 </Typography>
               </Grid>
-              <Grid item>
-                <Typography variant={isLargeScreen ? "h5" : "body1"} mx={5}>
+              <Grid container item sx={{
+                  padding:'10px',
+                  justifyContent:'center',
+                  alignItems:'center'
+              }}>
+                
+                <Typography align={'center'} variant={isLargeScreen ? "h5" : "body1"} mx={0} sx={{
+                  width:'60%',
+                }}>
                   Alps is the simplest way to build and manage your entire DeFi
                   + NFT portfolio across multiple chains from one dashboard.
                   Explore the world of decentralized finance today.
+             
                 </Typography>
               </Grid>
-              <Grid
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Image
+              src={isLargeScreen ? "/alps-desktop.png" : "/phone.png"}
+              alt='Picture of Alps Finance UI'
+              width={isLargeScreen ? 948 : 271}
+              height={isLargeScreen ? 600 : 552}
+            />
+            
+          </Grid>
+        </Grid>
+        <Grid
                 item
-                xs={12}
-                md={3}
+                justifyContent='center'
+                alignItems='center'
+                xs={0}
+                md={0}
+                sx={{
+                  padding:'2rem',
+                }}
                 onClick={() => {
                   const AlpsFinanceAppURL = "https://app.alps.finance";
                   window.open(AlpsFinanceAppURL, "_blank") ||
                     window.location.replace(AlpsFinanceAppURL);
                 }}
                 container
-                alignItems='center'
-                justifyContent='center'
               >
-                <Button
-                  color='inherit'
-                  variant='contained'
-                  sx={{
-                    borderRadius: 30,
-                    color: "#0D7E06",
-                    backgroundColor: "white",
-                    p: 2,
-                    fontWeight: "bold",
-                  }}
-                  onClick={() => {
-                    const AlpsFinanceAppURL = "https://app.alps.finance";
-                    window.open(AlpsFinanceAppURL, "_blank") ||
-                      window.location.replace(AlpsFinanceAppURL);
-                  }}
-                >
-                  Connect Wallet
-                </Button>
+              <Button sx={{
+                borderRadius: 30,
+                color: "#25284B",
+                backgroundColor: "white",
+                py: 1,
+                px:8,
+                fontWeight: "bold",
+              }}>Connect Wallet</Button>
               </Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Image
-              src={isLargeScreen ? "/laptop.png" : "/phone.png"}
-              alt='Picture of Alps Finance UI'
-              width={isLargeScreen ? 948 : 271}
-              height={isLargeScreen ? 520.07 : 552}
-            />
-          </Grid>
-        </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
       <WhyAlpsFinance isLargeScreen={isLargeScreen} isMediumScreen={isMediumScreen}/>
