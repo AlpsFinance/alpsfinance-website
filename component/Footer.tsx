@@ -69,7 +69,7 @@ const Footer: FC = () => {
       sx={{
         paddingTop: "3rem",
         paddingBottom: "3rem",
-        background: "linear-gradient(91.05deg, #0D7E06 -25.94%, #002400 98.77%)",
+        background: "#2D325A",
         color: "white",
         p: 2,
       }}

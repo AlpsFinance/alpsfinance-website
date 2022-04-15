@@ -22,10 +22,10 @@ const AlpsTokenPresale: FC<Props> = (props) => {
     <Box
       sx={{
         color: "white",
-        borderRadius: "68px",
-        background: "linear-gradient(132.36deg, #0D7E06 3.18%, #002400 74.97%)",
+        borderRadius: "",
+        background: "#2D325A",
         p: 5,
-        m: isLargeScreen ? 3 : 0,
+        m: isLargeScreen ? 0 : 0,
       }}
     >
       <Grid
@@ -41,14 +41,14 @@ const AlpsTokenPresale: FC<Props> = (props) => {
             container
             direction='column'
             justifyContent='center'
-            py={isLargeScreen ? 3 : 0}
-            pr={isLargeScreen ? 10 : 0}
+            // py={isLargeScreen ? 1 : 0}
+            pr={isLargeScreen ? 0 : 0}
           >
             <Typography
-              variant='h4'
+              variant='h2'
               fontWeight={600}
-              sx={{ mb: 1 }}
-              textAlign='center'
+              sx={{ mb: 1, pb:3}}
+              
             >
               $ALPS Token
             </Typography>
@@ -72,15 +72,14 @@ const AlpsTokenPresale: FC<Props> = (props) => {
             <Box
               sx={{
                 background:
-                  "linear-gradient(109.06deg, rgba(18, 209, 6, 0.3) 2.72%, rgba(255, 255, 255, 0) 98.2%)",
-                boxShadow: "0px 4px 5px 3px rgba(18, 209, 6, 0.1)",
+                  "#333A64",
                 borderRadius: "10px",
                 p: isLargeScreen ? 5 : 3,
               }}
             >
               <Box
                 sx={{
-                  background: "rgba(0, 36, 0, 0.5)",
+                  background: "#333A64",
                 }}
               >
                 <Grid
@@ -112,7 +111,16 @@ const AlpsTokenPresale: FC<Props> = (props) => {
                           fontWeight: "600",
                         }}
                       >
+                        <Box sx={{
+                           backgroundColor:'#20264d',
+                           p:2,
+                           width:'4.7rem',
+                           borderRadius:'10px',
+                           fontSize:'20px',
+                           fontWeight:"bold"
+                        }}>
                         <p>{timeLeft.days}</p>
+                        </Box>
                         <p>days</p>
                       </Box>
 
@@ -124,7 +132,16 @@ const AlpsTokenPresale: FC<Props> = (props) => {
                           fontWeight: "600",
                         }}
                       >
+                        <Box sx={{
+                           backgroundColor:'#20264d',
+                           p:2,
+                           width:'4.7rem',
+                           borderRadius:'10px',
+                           fontSize:'20px',
+                           fontWeight:"bold"
+                        }}>
                         <p>{timeLeft.hours}</p>
+                        </Box>
                         <p>hours</p>
                       </Box>
 
@@ -136,7 +153,17 @@ const AlpsTokenPresale: FC<Props> = (props) => {
                           fontWeight: "600",
                         }}
                       >
+                        <Box sx={{
+                          backgroundColor:'#20264d',
+                          p:2,
+                          width:'4.7rem',
+                          borderRadius:'10px',
+                          fontSize:'20px',
+                          fontWeight:"bold"
+
+                        }}>
                         <p>{timeLeft.minutes}</p>
+                        </Box>
                         <p>minutes</p>
                       </Box>
                       <Box
@@ -147,7 +174,16 @@ const AlpsTokenPresale: FC<Props> = (props) => {
                           fontWeight: "600",
                         }}
                       >
+                        <Box sx={{
+                           backgroundColor:'#20264d',
+                           p:2,
+                           width:'4.7rem',
+                           borderRadius:'10px',
+                           fontSize:'20px',
+                           fontWeight:"bold"
+                        }}>
                         <p>{timeLeft.seconds}</p>
+                        </Box>
                         <p>seconds</p>
                       </Box>
                     </Box>
@@ -167,7 +203,7 @@ const AlpsTokenPresale: FC<Props> = (props) => {
                   variant='contained'
                   sx={{
                     borderRadius: 30,
-                    color: "#0D7E06",
+                    color: "#2D325A",
                     backgroundColor: "white",
                     p: isLargeScreen ? 2 : 1,
                     px: isLargeScreen ? 4 : 3,

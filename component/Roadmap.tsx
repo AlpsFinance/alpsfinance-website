@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Item = styled(Box)(({ theme }) => ({
-  backgroundColor: "#002400",
+  backgroundColor: "#2D325A",
   ...theme.typography.body2,
   padding: theme.spacing(3),
   paddingLeft: 0,
@@ -57,7 +57,7 @@ const Roadmap: FC<Props> = (props) => {
                   <Grid item>
                     <Typography
                       variant='h5'
-                      color='#12D106'
+                      color='#ffffff'
                       fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
@@ -111,7 +111,7 @@ const Roadmap: FC<Props> = (props) => {
                   <Grid item>
                     <Typography
                       variant='h5'
-                      color='#12D106'
+                      color='#fff'
                       fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
@@ -168,7 +168,7 @@ const Roadmap: FC<Props> = (props) => {
                   <Grid item>
                     <Typography
                       variant='h5'
-                      color='#12D106'
+                      color='#fff'
                       fontWeight='bold'
                       sx={{ mb: 1 }}
                     >
@@ -218,7 +218,7 @@ const Roadmap: FC<Props> = (props) => {
                   <Grid item>
                     <Typography
                       variant='h5'
-                      color='#12D106'
+                      color='#fff'
                       fontWeight='bold'
                       sx={{ mb: 1 }}
                     >

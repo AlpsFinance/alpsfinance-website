@@ -34,7 +34,7 @@ const Community: FC<Props> = (props) => {
                   borderRadius: 30,
                   color: "white",
                   background:
-                    "linear-gradient(274.61deg, #0D7E06 18.06%, #00BB89 125.98%)",
+                    "#2D325A",
                   mt: 4,
                   py: 1,
                   px: 3,
