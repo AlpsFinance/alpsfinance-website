@@ -4,7 +4,7 @@ import { red } from "@mui/material/colors";
 // Create a theme instance.
 const theme = createTheme({
   typography: {
-    fontFamily: '"Noto Sans", sans-serif',
+    fontFamily: "'Montserrat', sans-serif;",
     // fontWeightMedium: 600
   },
   palette: {

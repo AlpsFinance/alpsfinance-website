@@ -51,7 +51,9 @@ const CustomAppBar: FC = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List sx={{
+        
+      }}>
         {menus.map((menu, index) => (
           <ListItem button key={index}>
             <ListItemText
@@ -71,9 +73,9 @@ const CustomAppBar: FC = () => {
           variant='contained'
           sx={{
             borderRadius: 30,
-            color: "white",
+            color: "backgroundColor='#25284B'",
             background:
-              "linear-gradient(274.61deg, #0D7E06 18.06%, #00BB89 125.98%)",
+              "white",
             ml: 1,
             fontWeight: "bold",
           }}
@@ -92,12 +94,13 @@ const CustomAppBar: FC = () => {
   return (
     <AppBar
       position='sticky'
-      color='transparent'
       elevation={0}
       sx={{
         pt: 1.5,
+        display:'space-around',
         pb: 1.5,
         pl: 3.5,
+        backgroundColor:'transparent',
         "@media (min-width: 780px)": {
           pr: 3.5,
         },
@@ -105,7 +108,7 @@ const CustomAppBar: FC = () => {
       }}
     >
       <Toolbar>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 3 }}>
           <AlpsLogo />
         </Box>
         {menus
@@ -118,7 +121,9 @@ const CustomAppBar: FC = () => {
               href={menu.url}
               sx={{
                 pr: 3,
+                flexGrow:1,
                 fontWeight: "bold",
+                
                 "@media (max-width: 780px)": {
                   display: "none",
                 },
@@ -132,9 +137,10 @@ const CustomAppBar: FC = () => {
           variant='contained'
           sx={{
             borderRadius: 30,
-            color: "#0D7E06",
+            color: "#25284B",
             backgroundColor: "white",
             py: 1,
+            px:8,
             fontWeight: "bold",
             "@media (max-width: 780px)": {
               display: "none",
