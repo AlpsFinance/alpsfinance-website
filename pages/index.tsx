@@ -20,7 +20,6 @@ import AlpsTokenPresale from "../component/AlpsTokenPresale";
 const Home: NextPage = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up('sm'));
-  const isMediumScreen = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     <div className={styles.container}>
@@ -136,7 +135,7 @@ const Home: NextPage = () => {
               </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
-      <WhyAlpsFinance isLargeScreen={isLargeScreen} isMediumScreen={isMediumScreen}/>
+      <WhyAlpsFinance isLargeScreen={isLargeScreen}/>
       <Roadmap isLargeScreen={isLargeScreen} />
       <Community isLargeScreen={isLargeScreen} />
       <Tokenomics isLargeScreen={isLargeScreen} />

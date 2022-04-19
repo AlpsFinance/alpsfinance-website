@@ -7,7 +7,6 @@ import ButtonBase from "@mui/material/ButtonBase";
 
 interface Props {
   isLargeScreen: Boolean;
-  isMediumScreen: Boolean;
 }
 
 const showLargePhone = (isRight = false) => {
@@ -133,7 +132,7 @@ const getGridStructure = (
   );
 };
 const WhyAlpsFinance: FC<Props> = (props) => {
-  const { isLargeScreen, isMediumScreen } = props;
+  const { isLargeScreen } = props;
   return (
     <Box>
       <Grid
@@ -169,7 +168,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid>
       <Box
         sx={{
-          backgroundImage: isMediumScreen ? "url(bg.jpg)" : "url(bg.jpg)",
+          backgroundImage: isLargeScreen ? "url(bg.jpg)" : "url(bg.jpg)",
           backgroundPosition:'center',
           backgroundSize: "cover",
         }}
