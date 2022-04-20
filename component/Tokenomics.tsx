@@ -111,7 +111,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
 
   return (
     <Box
-      mb={2}
+      mb={0}
       pb={5}
       sx={{
         backgroundColor: "#2D325A",
@@ -147,6 +147,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             width: "100%",
             color: "#ffffff",
             maxWidth: "768px",
+            padding:'2rem',
           }}
         >
           <Box>
