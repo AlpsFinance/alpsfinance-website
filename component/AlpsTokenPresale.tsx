@@ -67,7 +67,9 @@ const AlpsTokenPresale: FC<Props> = (props) => {
             container
             justifyContent='center'
             alignItems='start'
-            sx={{ ml: isLargeScreen ? 1 : 0 }}
+            sx={{ ml: isLargeScreen ? 1 : 0,  "@media (max-width: 780px)": {
+              display:'none'
+            }}}
           >
             <Box
               sx={{
