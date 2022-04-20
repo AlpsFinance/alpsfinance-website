@@ -7,6 +7,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 
 interface Props {
   isLargeScreen: Boolean;
+  isMediumScreen: Boolean;
 }
 
 const showLargePhone = (isRight = false) => {
@@ -132,7 +133,7 @@ const getGridStructure = (
   );
 };
 const WhyAlpsFinance: FC<Props> = (props) => {
-  const { isLargeScreen } = props;
+  const { isLargeScreen, isMediumScreen } = props;
   return (
     <Box>
       <Grid
@@ -147,15 +148,16 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             spacing={0}
             direction='column'
             justifyContent='center'
-            style={{ minHeight: isLargeScreen ? "60vh" : "auto", paddingTop:'7rem', paddingLeft:"5rem"}}
+            style={{ minHeight: isLargeScreen ? "60vh" : "auto", paddingTop:'7rem', paddingLeft: isLargeScreen ? "5rem" : "0rem"}}
           >
             <Typography variant={"h4"} fontWeight={600} sx={{ mb: 0,color:'#ffffff' }} textAlign='center'>
               Multi-Chain, Multi-Platform
             </Typography>
-            <Typography sx={{
+            <Typography  textAlign='center' sx={{
               color:"#ffffff",
               fontSize:"1.5rem",
-              paddingTop:'2rem'
+              paddingTop:'2rem',
+
             }}>
               As we are converging to a multi-chain world, we shall be trying
               our best to support as many (EVM-compatible) chain as possible.
@@ -168,7 +170,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid>
       <Box
         sx={{
-          backgroundImage: isLargeScreen ? "url(bg.jpg)" : "url(bg.jpg)",
+          backgroundImage: isMediumScreen ? "url(bg.jpg)" : "url(bg.jpg)",
           backgroundPosition:'center',
           backgroundSize: "cover",
         }}
@@ -184,16 +186,16 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             <Grid
               container
               spacing={0}
-              direction='column'
+              // direction='column'
               justifyContent='center'
               style={{ minHeight: isLargeScreen ? "60vh" : "auto",paddingTop:'7rem', paddingBottom:"4rem" }}
             >
               <Typography variant='h4' fontWeight={600} sx={{ mb: 3 }} textAlign='center'>
                 Community
               </Typography>
-              <Typography sx={{
+              <Typography  textAlign='center' justifyContent='center' sx={{
                 fontSize:"1.5rem",
-                paddingTop:'2rem'
+                paddingTop:'2rem',
               }}>
                 We believe in the power of community, which is why a core
                 component of our platform is enabling connection and interaction
