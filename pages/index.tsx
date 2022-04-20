@@ -119,6 +119,31 @@ const Home: NextPage = () => {
             />
           </Grid>
         </Grid>
+        <Grid
+                item
+                justifyContent='center'
+                alignItems='center'
+                xs={0}
+                md={0}
+                sx={{
+                  padding:'2rem',
+                }}
+                onClick={() => {
+                  const AlpsFinanceAppURL = "https://app.alps.finance";
+                  window.open(AlpsFinanceAppURL, "_blank") ||
+                    window.location.replace(AlpsFinanceAppURL);
+                }}
+                container
+              >
+              <Button sx={{
+                borderRadius: 30,
+                color: "#25284B",
+                backgroundColor: "white",
+                py: 1,
+                px:8,
+                fontWeight: "bold",
+              }}>Launch App</Button>
+              </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
       <WhyAlpsFinance isLargeScreen={isLargeScreen} />
