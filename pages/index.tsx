@@ -19,48 +19,47 @@ import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up('sm'));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <div className={styles.container}>
       <Head>
         <title>Alps Finance | Decentralized Social Investing Platform</title>
         <meta
-          name='description'
-          content='Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today.'
+          name="description"
+          content="Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today."
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box
         style={{
-          backgroundPosition:'center',
-          backgroundSize:'cover',
+          backgroundPosition: "center",
+          backgroundSize: "cover",
           backgroundImage: isLargeScreen
-            ? 'url(/alps-bg.png)'
+            ? "url(/alps-bg.png)"
             : "url(/alps-bg.png)",
-          
         }}
       >
         <AppBar />
         <Grid
           container
           spacing={0}
-          alignItems='center'
-          justifyContent='center'
+          alignItems="center"
+          justifyContent="center"
           pt={isLargeScreen ? 10 : 3}
           sx={{
             color: "white",
             pb: 5,
             mb: 0,
           }}
-          flexDirection='column'
+          flexDirection="column"
         >
           <Grid item>
             <Grid
               container
-              direction='column'
-              justifyContent='center'
-              textAlign='center'
+              direction="column"
+              justifyContent="center"
+              textAlign="center"
               spacing={2}
               sx={
                 isLargeScreen
@@ -73,27 +72,37 @@ const Home: NextPage = () => {
                     }
               }
             >
-              <Grid item sx={{
-                fontFamily: "'Poppins', sans-serif",
-                color: '#FFFFFF',
-              }}>
+              <Grid
+                item
+                sx={{
+                  fontFamily: "'Poppins', sans-serif",
+                  color: "#FFFFFF",
+                }}
+              >
                 <Typography variant={isLargeScreen ? "h3" : "h4"}>
                   <b>Decentralized Social Investing</b>
                 </Typography>
               </Grid>
-              <Grid container item sx={{
-                  padding:'10px',
-                  justifyContent:'center',
-                  alignItems:'center'
-              }}>
-                
-                <Typography align={'center'} variant={isLargeScreen ? "h5" : "body1"} mx={0} sx={{
-                  width:'60%',
-                }}>
+              <Grid
+                container
+                item
+                sx={{
+                  padding: "10px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  align={"center"}
+                  variant={isLargeScreen ? "h5" : "body1"}
+                  mx={0}
+                  sx={{
+                    width: "60%",
+                  }}
+                >
                   Alps is the simplest way to build and manage your entire DeFi
                   + NFT portfolio across multiple chains from one dashboard.
                   Explore the world of decentralized finance today.
-             
                 </Typography>
               </Grid>
             </Grid>
@@ -101,41 +110,44 @@ const Home: NextPage = () => {
           <Grid item>
             <Image
               src={isLargeScreen ? "/alps-desktop.png" : "/phone.png"}
-              alt='Picture of Alps Finance UI'
+              alt="Picture of Alps Finance UI"
               width={isLargeScreen ? 948 : 271}
               height={isLargeScreen ? 600 : 552}
             />
-            
           </Grid>
         </Grid>
         <Grid
-                item
-                justifyContent='center'
-                alignItems='center'
-                xs={0}
-                md={0}
-                sx={{
-                  padding:'2rem',
-                }}
-                onClick={() => {
-                  const AlpsFinanceAppURL = "https://app.alps.finance";
-                  window.open(AlpsFinanceAppURL, "_blank") ||
-                    window.location.replace(AlpsFinanceAppURL);
-                }}
-                container
-              >
-              <Button sx={{
-                borderRadius: 30,
-                color: "#25284B",
-                backgroundColor: "white",
-                py: 1,
-                px:8,
-                fontWeight: "bold",
-              }}>Connect Wallet</Button>
-              </Grid>
+          item
+          justifyContent="center"
+          alignItems="center"
+          xs={0}
+          md={0}
+          sx={{
+            padding: "2rem",
+          }}
+          onClick={() => {
+            const AlpsFinanceAppURL = "https://app.alps.finance";
+            window.open(AlpsFinanceAppURL, "_blank") ||
+              window.location.replace(AlpsFinanceAppURL);
+          }}
+          container
+        >
+          <Button
+            sx={{
+              borderRadius: 30,
+              color: "#25284B",
+              backgroundColor: "white",
+              py: 1,
+              px: 8,
+              fontWeight: "bold",
+            }}
+          >
+            Connect Wallet
+          </Button>
+        </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
-      <WhyAlpsFinance isLargeScreen={isLargeScreen}/>
+      <WhyAlpsFinance isLargeScreen={isLargeScreen} />
       <Roadmap isLargeScreen={isLargeScreen} />
       <Community isLargeScreen={isLargeScreen} />
       <Tokenomics isLargeScreen={isLargeScreen} />

@@ -7,21 +7,26 @@ import ButtonBase from "@mui/material/ButtonBase";
 
 interface Props {
   isLargeScreen: Boolean;
-  isMediumScreen: Boolean;
+  isMediumScreen?: Boolean;
 }
 
 const showLargePhone = (isRight = false) => {
   return (
     <Grid item p={0} ml={isRight ? 0 : "2rem"} mt={"3rem"} lg={0}>
-      <Image src={"/alps-transparent.png"} alt='Phone sample' width={550} height={600} />
+      <Image
+        src={"/alps-transparent.png"}
+        alt="Phone sample"
+        width={550}
+        height={600}
+      />
     </Grid>
   );
 };
 const showSmallPhone = () => {
   return (
     <Grid item xs={12} p={0}>
-      <Grid container justifyContent='center' alignItems='center' pt={1}>
-        <Image src={"/phone.png"} alt='Phone sample' width={271} height={552} />
+      <Grid container justifyContent="center" alignItems="center" pt={1}>
+        <Image src={"/phone.png"} alt="Phone sample" width={271} height={552} />
       </Grid>
     </Grid>
   );
@@ -113,7 +118,7 @@ const getGridStructure = (
           </ButtonBase>
         </Grid>
         <Grid item xs sm container>
-          <Grid item xs container direction='column' spacing={3}>
+          <Grid item xs container direction="column" spacing={3}>
             <Grid item xs>
               <Typography
                 variant={isLargeScreen ? "h6" : "body1"}
@@ -122,9 +127,7 @@ const getGridStructure = (
               >
                 {grid.header}
               </Typography>
-              <Typography>
-                {grid.body}
-              </Typography>
+              <Typography>{grid.body}</Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -138,7 +141,12 @@ const WhyAlpsFinance: FC<Props> = (props) => {
     <Box>
       <Grid
         container
-        sx={{ backgroundColor:'#2D325A',pl: 5, pr: 5, mt: isLargeScreen ? 0 : 0 }}
+        sx={{
+          backgroundColor: "#2D325A",
+          pl: 5,
+          pr: 5,
+          mt: isLargeScreen ? 0 : 0,
+        }}
         spacing={3}
       >
         {isLargeScreen ? showLargePhone() : null}
@@ -146,19 +154,30 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           <Grid
             container
             spacing={0}
-            direction='column'
-            justifyContent='center'
-            style={{ minHeight: isLargeScreen ? "60vh" : "auto", paddingTop:'7rem', paddingLeft: isLargeScreen ? "5rem" : "0rem"}}
+            direction="column"
+            justifyContent="center"
+            style={{
+              minHeight: isLargeScreen ? "60vh" : "auto",
+              paddingTop: "7rem",
+              paddingLeft: isLargeScreen ? "5rem" : "0rem",
+            }}
           >
-            <Typography variant={"h4"} fontWeight={600} sx={{ mb: 0,color:'#ffffff' }} textAlign='center'>
+            <Typography
+              variant={"h4"}
+              fontWeight={600}
+              sx={{ mb: 0, color: "#ffffff" }}
+              textAlign="center"
+            >
               Multi-Chain, Multi-Platform
             </Typography>
-            <Typography  textAlign='center' sx={{
-              color:"#ffffff",
-              fontSize:"1.5rem",
-              paddingTop:'2rem',
-
-            }}>
+            <Typography
+              textAlign="center"
+              sx={{
+                color: "#ffffff",
+                fontSize: "1.5rem",
+                paddingTop: "2rem",
+              }}
+            >
               As we are converging to a multi-chain world, we shall be trying
               our best to support as many (EVM-compatible) chain as possible.
               Furthermore, we shall be making the platform accessible to all
@@ -171,32 +190,51 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       <Box
         sx={{
           backgroundImage: isMediumScreen ? "url(bg.jpg)" : "url(bg.jpg)",
-          backgroundPosition:'center',
+          backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        color='white'
+        color="white"
         pb={isLargeScreen ? 10 : 0}
       >
         <Grid
           container
-          sx={{ pl: isLargeScreen ? 7 : 5, pr: 4, mt: isLargeScreen ? 0: 0 }}
+          sx={{ pl: isLargeScreen ? 7 : 5, pr: 4, mt: isLargeScreen ? 0 : 0 }}
           spacing={3}
         >
-          <Grid item lg={6} xs={12} ml={isLargeScreen ? "8rem" : 0} mr={isLargeScreen ? 0 : "2rem"}>
+          <Grid
+            item
+            lg={6}
+            xs={12}
+            ml={isLargeScreen ? "8rem" : 0}
+            mr={isLargeScreen ? 0 : "2rem"}
+          >
             <Grid
               container
               spacing={0}
               // direction='column'
-              justifyContent='center'
-              style={{ minHeight: isLargeScreen ? "60vh" : "auto",paddingTop:'7rem', paddingBottom:"4rem" }}
+              justifyContent="center"
+              style={{
+                minHeight: isLargeScreen ? "60vh" : "auto",
+                paddingTop: "7rem",
+                paddingBottom: "4rem",
+              }}
             >
-              <Typography variant='h4' fontWeight={600} sx={{ mb: 3 }} textAlign='center'>
+              <Typography
+                variant="h4"
+                fontWeight={600}
+                sx={{ mb: 3 }}
+                textAlign="center"
+              >
                 Community
               </Typography>
-              <Typography  textAlign='center' justifyContent='center' sx={{
-                fontSize:"1.5rem",
-                paddingTop:'2rem',
-              }}>
+              <Typography
+                textAlign="center"
+                justifyContent="center"
+                sx={{
+                  fontSize: "1.5rem",
+                  paddingTop: "2rem",
+                }}
+              >
                 We believe in the power of community, which is why a core
                 component of our platform is enabling connection and interaction
                 with other users. You are not alone as we are giving you the
@@ -204,8 +242,8 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                 other users who are investing through our platform.
               </Typography>
               <Button
-                color='inherit'
-                variant='contained'
+                color="inherit"
+                variant="contained"
                 sx={{
                   borderRadius: 30,
                   color: "#25284B",
@@ -231,8 +269,8 @@ const WhyAlpsFinance: FC<Props> = (props) => {
         </Grid>
         <Grid
           container
-          justifyContent='center'
-          alignItems='start'
+          justifyContent="center"
+          alignItems="start"
           sx={{ ml: isLargeScreen ? 1 : 0, mb: 3, mt: isLargeScreen ? 0 : 5 }}
         >
           <Typography variant={isLargeScreen ? "h4" : "h6"} fontWeight={600}>
@@ -257,8 +295,8 @@ const WhyAlpsFinance: FC<Props> = (props) => {
         </Grid>
         <Grid
           container
-          justifyContent='center'
-          alignItems='center'
+          justifyContent="center"
+          alignItems="center"
           sx={{ pl: isLargeScreen ? 0 : 2, pr: isLargeScreen ? 0 : 2 }}
         >
           {gridDataThird.map((grid, index) => {
