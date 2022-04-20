@@ -131,7 +131,7 @@ const Home: NextPage = () => {
                 py: 1,
                 px:8,
                 fontWeight: "bold",
-              }}>Connect Wallet</Button>
+              }}>Launch App</Button>
               </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
