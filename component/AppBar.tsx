@@ -47,13 +47,11 @@ const CustomAppBar: FC = () => {
   const list = (anchor: String) => (
     <Box
       sx={{ width: 250 }}
-      role='presentation'
+      role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List sx={{
-        
-      }}>
+      <List sx={{}}>
         {menus.map((menu, index) => (
           <ListItem button key={index}>
             <ListItemText
@@ -69,13 +67,12 @@ const CustomAppBar: FC = () => {
       </List>
       <List>
         <Button
-          color='inherit'
-          variant='contained'
+          color="inherit"
+          variant="contained"
           sx={{
             borderRadius: 30,
             color: "backgroundColor='#25284B'",
-            background:
-              "white",
+            background: "white",
             ml: 1,
             fontWeight: "bold",
           }}
@@ -93,14 +90,14 @@ const CustomAppBar: FC = () => {
 
   return (
     <AppBar
-      position='sticky'
+      position="sticky"
       elevation={0}
       sx={{
         pt: 1.5,
-        display:'space-around',
+        display: "space-around",
         pb: 1.5,
         pl: 3.5,
-        backgroundColor:'transparent',
+        backgroundColor: "transparent",
         "@media (min-width: 780px)": {
           pr: 3.5,
         },
@@ -121,9 +118,9 @@ const CustomAppBar: FC = () => {
               href={menu.url}
               sx={{
                 pr: 3,
-                flexGrow:1,
+                flexGrow: 1,
                 fontWeight: "bold",
-                
+
                 "@media (max-width: 780px)": {
                   display: "none",
                 },
@@ -133,14 +130,14 @@ const CustomAppBar: FC = () => {
             </Link>
           ))}
         <Button
-          color='inherit'
-          variant='contained'
+          color="inherit"
+          variant="contained"
           sx={{
             borderRadius: 30,
             color: "#25284B",
             backgroundColor: "white",
             py: 1,
-            px:8,
+            px: 8,
             fontWeight: "bold",
             "@media (max-width: 780px)": {
               display: "none",
@@ -152,12 +149,12 @@ const CustomAppBar: FC = () => {
               window.location.replace(AlpsFinanceAppURL);
           }}
         >
-          Connect Wallet
+          Launch App
         </Button>
         <Grid
           container
-          justifyContent='right'
-          alignItems='right'
+          justifyContent="right"
+          alignItems="right"
           sx={{
             "@media (min-width: 780px)": {
               display: "none",
