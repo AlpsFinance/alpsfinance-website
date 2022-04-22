@@ -89,13 +89,12 @@ const options: ApexOptions = {
           height: "100%",
         },
         legend: {
-          itemMargin: {
-            horizontal: 4,
-            vertical: 0,
-          },
+          height: 400,
           horizontalAlign: "left",
           position: "bottom",
-          fontSize: "16px",
+          fontSize: "15px",
+          offsetX: 5,
+          offsetY: 20,
         },
       },
     },
@@ -112,7 +111,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
   return (
     <Box
       mb={0}
-      pb={5}
+      pb={2}
       sx={{
         backgroundColor: "#2D325A",
       }}
@@ -142,12 +141,12 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
           display='flex'
           justifyContent='space-between'
           alignItems='center'
-          mb={8}
+          mb={5}
           sx={{
             width: "100%",
             color: "#ffffff",
             maxWidth: "768px",
-            padding:'2rem',
+            padding: "2rem",
           }}
         >
           <Box>
@@ -211,7 +210,10 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             width: "100%",
             maxWidth: "768px",
             color: "#fff",
-            height: isLargeScreen ? "fit-content" : "750px",
+            height: isLargeScreen ? "fit-content" : "700px",
+            pl: isLargeScreen ? 0 : "1rem",
+            pr: isLargeScreen ? 0 : "2rem",
+            ml: "2rem",
           }}
         >
           <Typography variant='h6' fontWeight={600} align='left' mb={2}>
