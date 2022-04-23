@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Box, useTheme } from "@mui/system";
+import Box from "@mui/system/Box";
 import { styled } from "@mui/material/styles";
 
 interface Props {
@@ -14,7 +14,7 @@ const Item = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3),
   paddingLeft: 0,
   borderRadius: "16px",
-  minHeight: "537px",
+  minHeight: "520px",
 }));
 
 const Roadmap: FC<Props> = (props) => {
@@ -73,32 +73,47 @@ const Roadmap: FC<Props> = (props) => {
                 <ul>
                   <li>
                     <Typography variant="subtitle1">
-                      Launch Twitter, Telegram, and Discord communities
+                      Twitter, Telegram, and Discord communities Launch
                     </Typography>
                   </li>
-                  <li>
+                  {/* <li>
                     <Typography variant="subtitle1">
                       Launch landing page for pre-sale and airdrop
                     </Typography>
-                  </li>
+                  </li> */}
                   <li>
                     <Typography variant="subtitle1">
-                      Smart contract for $ALPS token
+                      $ALPS ERC20 Token
                     </Typography>
                   </li>
                   <li>
                     <Typography variant="subtitle1">
-                      V1 of dApp for multi-chain token and NFTs storage in FTM
+                      $ALPS ERC721 NFT Avatar
                     </Typography>
                   </li>
-                  <li>
+                  {/* <li>
                     <Typography variant="subtitle1">
                       First phase of Airdrop
                     </Typography>
+                  </li> */}
+                  <li>
+                    <Typography variant="subtitle1">
+                      Li.Fi Integration
+                    </Typography>
                   </li>
                   <li>
                     <Typography variant="subtitle1">
-                      Publish first whitepaper Open pre-sale
+                      Liquidity Pools Integration
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      Publish Whitepaper V1
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      MVP Launch !!!🚀
                     </Typography>
                   </li>
                 </ul>
@@ -125,9 +140,9 @@ const Roadmap: FC<Props> = (props) => {
                   </Grid>
                 </Grid>
                 <ul>
-                  <li>
+                  {/* <li>
                     <Typography variant="subtitle1">Close pre-sale</Typography>
-                  </li>
+                  </li> */}
                   <li>
                     <Typography variant="subtitle1">Start IDO</Typography>
                   </li>
@@ -138,14 +153,23 @@ const Roadmap: FC<Props> = (props) => {
                   </li>
                   <li>
                     <Typography variant="subtitle1">
-                      Integrate with lending and borrowing platform such as
+                      Fiat On-Ramp and Off-Ramp Integration
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      Web3Auth Integration
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      Lending and Borrowing Protocol Integration, e.g.
                       Abracadabra
                     </Typography>
                   </li>
                   <li>
                     <Typography variant="subtitle1">
-                      Social investing platform launch for sharing your
-                      investment advice and other activities
+                      Metaverse Marketplace Launch
                     </Typography>
                   </li>
                   <li>
@@ -155,7 +179,12 @@ const Roadmap: FC<Props> = (props) => {
                   </li>
                   <li>
                     <Typography variant="subtitle1">
-                      Open $ALPS staking
+                      $ALPS Staking Launch
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      $ALPS ERC721 Name Service (.alps)
                     </Typography>
                   </li>
                 </ul>
@@ -205,7 +234,17 @@ const Roadmap: FC<Props> = (props) => {
                   </li>
                   <li>
                     <Typography variant="subtitle1">
-                      Connect with bridges
+                      Metaverse Marketplace Launch
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      DAO Investment Fund Launch
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      Gamified Social Media Feature Launch
                     </Typography>
                   </li>
                 </ul>
@@ -246,6 +285,11 @@ const Roadmap: FC<Props> = (props) => {
                   <li>
                     <Typography variant="subtitle1">
                       DeFi, DAO, and NFT expansion
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography variant="subtitle1">
+                      Incentivised in-app user social media interaction
                     </Typography>
                   </li>
                   <li>

@@ -239,7 +239,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           justifyContent="center"
           alignItems="center"
           sx={{ ml: isLargeScreen ? 1 : 0 }}
-          mb={isLargeScreen ? 0 : 3}
+          mb={3}
         >
           <Typography variant="h4" fontWeight={600}>
             Why Alps Finance?
