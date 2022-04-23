@@ -159,7 +159,7 @@ const CustomAppBar: FC = () => {
           )}
         {isLargeScreen ? (
           <Button
-            color="inherit"
+            color={isYOffsetMoreThan100 ? "primary" : "inherit"}
             variant="contained"
             sx={{
               borderRadius: 3,

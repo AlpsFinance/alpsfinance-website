@@ -13,28 +13,26 @@ interface Props {
 const Community: FC<Props> = (props) => {
   const { isLargeScreen } = props;
   return (
-    <Box sx={{mb: "3rem"}}>
-      <Grid container justifyContent='center' alignItems='center'>
+    <Box sx={{ mb: "3rem" }}>
+      <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={10} md={6}>
-          <Typography variant={isLargeScreen ? 'h6' : 'body1'} align='center'>
+          <Typography variant={isLargeScreen ? "h6" : "body1"} align="center">
             Learn more about Alps Finance, chat with the team, others in the
             community, and have your say in shaping the future of decentralized
             social investing.
           </Typography>
         </Grid>
       </Grid>
-      <Grid container justifyContent='center' alignItems='center'>
+      <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={12} md={6}>
-          <Grid container justifyContent='center' alignItems='center'>
+          <Grid container justifyContent="center" alignItems="center">
             <Grid item>
               <Button
-                color='inherit'
-                variant='contained'
+                color="primary"
+                variant="contained"
                 sx={{
-                  borderRadius: 30,
+                  borderRadius: 3,
                   color: "white",
-                  background:
-                    "#2D325A",
                   mt: 4,
                   py: 1,
                   px: 3,
@@ -48,10 +46,19 @@ const Community: FC<Props> = (props) => {
                     window.location.replace(AlpsFinanceAppURL);
                 }}
               >
-                <IconButton sx={{ color: "white" }}>
-                  <FaDiscord />
-                </IconButton>
-                Join Our Discord
+                <Grid
+                  container
+                  spacing={2}
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <FaDiscord size={30} style={{ marginTop: 7 }} />
+                  </Grid>
+                  <Grid item>
+                    <Typography>Join Our Discord</Typography>
+                  </Grid>
+                </Grid>
               </Button>
             </Grid>
           </Grid>

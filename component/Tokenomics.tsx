@@ -4,6 +4,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 import Image from "next/image";
+import { useTheme } from "@mui/system";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
@@ -104,6 +105,7 @@ interface Props {
 }
 
 const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
+  const { palette } = useTheme();
   const [series] = useState<number[]>([15, 5, 5, 10, 10, 5, 25, 25]);
 
   return (
@@ -111,7 +113,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
       mb={0}
       pb={2}
       sx={{
-        backgroundColor: "#2D325A",
+        background: `linear-gradient(to right top, ${palette.primary.main}, ${palette.secondary.main})`,
       }}
     >
       <Grid
@@ -153,10 +155,10 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             </Typography>
             <Box display="flex" alignItems="center" mb={1}>
               <Typography variant="subtitle1" color="#fff" width="150px">
-                Token Ticker:
+                Ticker:
               </Typography>
               <Typography variant="subtitle1" color="#fff" fontWeight={600}>
-                <b>Alps Token</b>
+                <b>ALPS</b>
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>

@@ -5,11 +5,10 @@ import { red } from "@mui/material/colors";
 const theme = createTheme({
   typography: {
     fontFamily: "'Montserrat', sans-serif;",
-    // fontWeightMedium: 600
   },
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "#25284B",
     },
     secondary: {
       main: "#20264d",
