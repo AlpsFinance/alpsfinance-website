@@ -25,34 +25,37 @@ const AlpsTokenPresale: FC<Props> = (props) => {
         borderRadius: "",
         background: "#2D325A",
         p: 5,
-        m: isLargeScreen ? 0 : 0,
       }}
     >
       <Grid
         container
         sx={{
           py: isLargeScreen ? 8 : 3,
-          pb: isLargeScreen ? 10 : 0,
+          px: isLargeScreen ? 25 : 3,
         }}
         spacing={3}
       >
-        <Grid item xs={12} md={7}>
+        <Grid item>
           <Grid
             container
             direction='column'
             justifyContent='center'
-            // py={isLargeScreen ? 1 : 0}
-            pr={isLargeScreen ? 0 : 0}
+            alignItems='center'
           >
             <Typography
-              variant='h2'
+              variant='h4'
               fontWeight={600}
-              sx={{ mb: 1, pb:3}}
-              
+              sx={{ mb: 1, pb: 3 }}
+              align='center'
             >
               $ALPS Token
             </Typography>
-            <Typography>
+            <Typography
+              align='center'
+              sx={{
+                fontSize: "1.5rem",
+              }}
+            >
               $Alps Token is the native utility token of the Alps Finance
               platform which gives you the opportunity to stake in order to earn
               more of the token; get reduced fees for holding our token; earn
@@ -62,7 +65,8 @@ const AlpsTokenPresale: FC<Props> = (props) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={5}>
+        {/* Will be uncommentetd later when needed */}
+        {/* <Grid item xs={12} md={5}>
           <Grid
             container
             justifyContent='center'
@@ -228,7 +232,7 @@ const AlpsTokenPresale: FC<Props> = (props) => {
               </Grid>
             </Box>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
   );

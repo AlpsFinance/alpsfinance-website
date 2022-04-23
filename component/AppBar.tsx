@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect, useCallback } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,10 +11,12 @@ import ListItemText from "@mui/material/ListItemText";
 import { Menu } from "@mui/icons-material";
 
 const CustomAppBar: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isYOffsetMoreThan100, setIsYOffsetMoreThan100] =
+    useState<boolean>(false);
 
   const toggleDrawer =
-    (anchor: String, open: boolean) =>
+    (_: String, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
         event.type === "keydown" &&
@@ -26,6 +28,19 @@ const CustomAppBar: FC = () => {
 
       setIsOpen(open);
     };
+
+  /**
+   * @name handleScroll
+   * @description Handle scrolling logic to give app bar box shadow
+   */
+  const handleScroll = useCallback(() => {
+    const position = window.pageYOffset;
+    // eslint-disable-next-line no-mixed-operators
+    if (position >= 100 !== isYOffsetMoreThan100) {
+      setIsYOffsetMoreThan100(position >= 100);
+    }
+  }, [isYOffsetMoreThan100]);
+
   const menus = [
     {
       name: "Home",
@@ -88,25 +103,36 @@ const CustomAppBar: FC = () => {
     </Box>
   );
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
+      color="transparent"
       elevation={0}
       sx={{
         pt: 1.5,
-        display: "space-around",
         pb: 1.5,
         pl: 3.5,
-        backgroundColor: "transparent",
+        backgroundColor: isYOffsetMoreThan100 ? "white" : "transparent",
+        transition: "0.3s",
+        ...(isYOffsetMoreThan100 && {
+          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+        }),
         "@media (min-width: 780px)": {
           pr: 3.5,
         },
-        color: "white",
       }}
     >
       <Toolbar>
         <Box sx={{ flexGrow: 3 }}>
-          <AlpsLogo />
+          <AlpsLogo fillColor={isYOffsetMoreThan100 ? "#20264d" : "white"} />
         </Box>
         {menus
           .filter((menu) => menu.name !== "Home")
@@ -114,7 +140,7 @@ const CustomAppBar: FC = () => {
             <Link
               key={index}
               underline={"none"}
-              color={"white"}
+              color={isYOffsetMoreThan100 ? "#20264d" : "white"}
               href={menu.url}
               sx={{
                 pr: 3,
