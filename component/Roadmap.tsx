@@ -21,7 +21,7 @@ const Roadmap: FC<Props> = (props) => {
   const { isLargeScreen } = props;
 
   return (
-    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
+    <div style={{ paddingTop: 24, paddingBottom: 24 }}>
       <Grid
         container
         direction="column"
@@ -44,7 +44,7 @@ const Roadmap: FC<Props> = (props) => {
         sx={{
           color: "white",
           borderRadius: "68px",
-          p: 5,
+          p: 3,
           m: isLargeScreen ? 3 : 0,
         }}
       >

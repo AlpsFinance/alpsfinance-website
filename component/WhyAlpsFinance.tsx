@@ -35,37 +35,33 @@ const showSmallPhone = () => {
 const gridData = [
   {
     src: "/bi-lock.svg",
-    alt: "Data Ownership and Privacy Icon",
+    alt: "Asset Ownership",
     header: "Data Ownership and Privacy",
-    body: "You will have full ownership and privacy on the all your data on the platform, which will be stored on the blockchain, making it censorship resistant.",
+    body: "Full asset control and ownership that is censorship resistant from any third-party.",
   },
   {
     src: "/setting.svg",
     alt: "Easy Account Management Icon",
     header: "Easy Account Management",
-    body: "We are making it easy for you to manage your account from a simple user-friendly interface. You no longer need to hop from one protocol to another when you can simply manage and invest all your assets from one dashboard.",
+    body: "Simple user interface to manage your DeFi investments in multiple wallets, smart contract wallets, and DAOs.",
   },
-];
-const gridDataSecond = [
   {
     src: "/integration.svg",
     alt: "DeFi Integration Icon",
     header: "DeFi Integration",
-    body: "Every week you can expect us to role out new DeFi protocol integrations to increase your investment options as we expand our partnership across the ecosystem.",
+    body: "Integration with numerous DeFi protocols across different blockchains.",
   },
   {
     src: "/database.svg",
-    alt: "Multi-Asset Deriviatives Icon",
-    header: "Multi-Asset Deriviatives",
-    body: "At the core of our mission is giving you unlimited options. We aim to remove your worries that you might be missing out on some opportunity which is why we're our platform multichain + crosschain so you have multiple assets to explore.",
+    alt: "Multi-Asset Icon",
+    header: "Multi-Asset",
+    body: "Invest in unlimited options of DeFi products and take advantage of DeFi's money lego feature to the maximum from single dashboard.",
   },
-];
-const gridDataThird = [
   {
     src: "/marketplace.svg",
     alt: "Metaverse Marketplace Icon",
     header: "Metaverse Marketplace",
-    body: "It's no secret that the Metaverse is the new frontier in the crypto space which is why we're providing you the opportunity to provide liquidity, stake, and invest in a variety of your favorite metaverse platform.",
+    body: "Trade & stake your favorite NFTs throughout multiple NFT Marketplace & Metaverse game.",
   },
 ];
 
@@ -78,58 +74,50 @@ interface gridInterface {
 
 const getGridStructure = (
   grid: gridInterface,
-  index: Key,
+  index: number,
   isLargeScreen: Boolean
 ) => {
   return (
     <Grid
       key={index}
       item
-      lg={index === 0 ? true : 6}
+      lg={4}
+      md={6}
       xs={12}
       sx={{
         borderRadius: "3px",
       }}
       mb={2}
       py={1}
-      mr={isLargeScreen ? 1 : 0}
+      px={isLargeScreen ? 5 : 7}
     >
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
+      <Grid
+        container
+        spacing={1}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
         <Grid item>
-          <ButtonBase
-            sx={{
-              width: 80,
-              height: isLargeScreen ? 128 : 150,
-              ml: 2,
-            }}
-          >
-            <Box
-              sx={{
-                p: 1,
-              }}
-            >
-              <Image
-                src={grid.src}
-                alt={grid.alt}
-                width={isLargeScreen ? 40 : 30}
-                height={isLargeScreen ? 40 : 30}
-              />
-            </Box>
-          </ButtonBase>
+          <Image
+            src={grid.src}
+            alt={grid.alt}
+            width={isLargeScreen ? 40 : 70}
+            height={isLargeScreen ? 40 : 70}
+          />
         </Grid>
-        <Grid item xs sm container>
-          <Grid item xs container direction="column" spacing={3}>
-            <Grid item xs>
-              <Typography
-                variant={isLargeScreen ? "h6" : "body1"}
-                fontWeight={600}
-                sx={{ mt: isLargeScreen ? 0 : 2, mb: 0 }}
-              >
-                {grid.header}
-              </Typography>
-              <Typography>{grid.body}</Typography>
-            </Grid>
-          </Grid>
+        <Grid item>
+          <Typography
+            variant={isLargeScreen ? "h6" : "body1"}
+            align="center"
+            fontWeight={600}
+            sx={{ mt: isLargeScreen ? 0 : 2, mb: 0 }}
+          >
+            {grid.header}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography align="center">{grid.body}</Typography>
         </Grid>
       </Grid>
     </Grid>
@@ -196,7 +184,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           backgroundSize: "cover",
         }}
         color="white"
-        py={3}
+        py={5}
       >
         {/* <Grid
           container
@@ -250,8 +238,9 @@ const WhyAlpsFinance: FC<Props> = (props) => {
         <Grid
           container
           justifyContent="center"
-          alignItems="start"
+          alignItems="center"
           sx={{ ml: isLargeScreen ? 1 : 0 }}
+          mb={isLargeScreen ? 0 : 3}
         >
           <Typography variant="h4" fontWeight={600}>
             Why Alps Finance?
@@ -263,24 +252,6 @@ const WhyAlpsFinance: FC<Props> = (props) => {
         >
           {gridData.map((grid, index) => {
             return getGridStructure(grid, index, isLargeScreen);
-          })}
-        </Grid>
-        <Grid
-          container
-          sx={{ pl: isLargeScreen ? 5 : 2, pr: isLargeScreen ? 5 : 2 }}
-        >
-          {gridDataSecond.map((grid, index) => {
-            return getGridStructure(grid, index, isLargeScreen);
-          })}
-        </Grid>
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{ pl: isLargeScreen ? 0 : 2, pr: isLargeScreen ? 0 : 2 }}
-        >
-          {gridDataThird.map((grid, index) => {
-            return getGridStructure(grid, index + 1, isLargeScreen);
           })}
         </Grid>
       </Box>

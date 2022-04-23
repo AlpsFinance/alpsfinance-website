@@ -110,7 +110,8 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
 
   return (
     <Box
-      py={3}
+      pt={3}
+      py={isLargeScreen ? 3 : 0}
       sx={{
         background: `linear-gradient(to right top, ${palette.primary.main}, ${palette.secondary.main})`,
       }}
