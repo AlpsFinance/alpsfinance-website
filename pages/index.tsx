@@ -14,6 +14,7 @@ import Footer from "../component/Footer";
 import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 // import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Alps Finance | Decentralized Social Investing Platform</title>
         <meta
@@ -32,7 +33,8 @@ const Home: NextPage = () => {
       </Head>
       <AppBar mode={AppBarMode.HOME} />
       <Box
-        style={{
+        sx={{
+          py: 3,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundImage: isLargeScreen
@@ -45,13 +47,13 @@ const Home: NextPage = () => {
           spacing={0}
           alignItems="center"
           justifyContent="center"
-          pt={isLargeScreen ? 20 : 3}
+          pt={isLargeScreen ? 20 : 0}
           sx={{
             color: "white",
           }}
           flexDirection="column"
         >
-          <Grid item>
+          <Grid item xs={12}>
             <Grid
               container
               direction="column"
@@ -105,7 +107,7 @@ const Home: NextPage = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
             <Image
               src="/alps-desktop.png"
               alt="Picture of Alps Finance UI"
@@ -113,13 +115,36 @@ const Home: NextPage = () => {
               height={isLargeScreen ? 600 : 200}
             />
           </Grid>
+          {!isLargeScreen && (
+            <Grid item xs={12} sx={{ width: "100vw", px: 10 }}>
+              <Button
+                color="inherit"
+                variant="contained"
+                size="large"
+                fullWidth
+                sx={{
+                  borderRadius: 3,
+                  backgroundColor: "white",
+                  color: "#25284B",
+                  fontWeight: "bold",
+                }}
+                onClick={() => {
+                  const AlpsFinanceAppURL = "https://app.alps.finance";
+                  window.open(AlpsFinanceAppURL, "_blank") ||
+                    window.location.replace(AlpsFinanceAppURL);
+                }}
+              >
+                Launch App
+              </Button>
+            </Grid>
+          )}
         </Grid>
       </Box>
       {/* <AlpsTokenPresale isLargeScreen={isLargeScreen} /> */}
       <WhyAlpsFinance isLargeScreen={isLargeScreen} />
       <Roadmap isLargeScreen={isLargeScreen} />
       <Tokenomics isLargeScreen={isLargeScreen} />
-      <Community isLargeScreen={isLargeScreen} />
+      <Community />
       <Footer />
     </div>
   );
