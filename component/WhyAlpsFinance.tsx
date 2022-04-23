@@ -2,8 +2,9 @@ import { FC, Key } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
+import { useTheme } from "@mui/system";
 
 interface Props {
   isLargeScreen: Boolean;
@@ -87,7 +88,6 @@ const getGridStructure = (
       lg={index === 0 ? true : 6}
       xs={12}
       sx={{
-        background: "#25284B",
         borderRadius: "3px",
       }}
       mb={2}
@@ -137,6 +137,8 @@ const getGridStructure = (
 };
 const WhyAlpsFinance: FC<Props> = (props) => {
   const { isLargeScreen, isMediumScreen } = props;
+  const { palette } = useTheme();
+
   return (
     <Box>
       {/* <Grid
@@ -189,7 +191,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
       </Grid> */}
       <Box
         sx={{
-          backgroundImage: isMediumScreen ? "url(bg.jpg)" : "url(bg.jpg)",
+          background: `linear-gradient(to right top, ${palette.primary.main}, ${palette.secondary.main})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -251,7 +253,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           alignItems="start"
           sx={{ ml: isLargeScreen ? 1 : 0 }}
         >
-          <Typography variant={isLargeScreen ? "h4" : "h6"} fontWeight={600}>
+          <Typography variant="h4" fontWeight={600}>
             Why Alps Finance?
           </Typography>
         </Grid>

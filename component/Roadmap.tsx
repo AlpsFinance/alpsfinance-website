@@ -30,7 +30,12 @@ const Roadmap: FC<Props> = (props) => {
         spacing={3}
       >
         <Grid item>
-          <Typography variant="h4" fontWeight={600} align="center">
+          <Typography
+            variant="h4"
+            fontWeight={600}
+            align="center"
+            color="secondary"
+          >
             <b>Roadmap</b>
           </Typography>
         </Grid>

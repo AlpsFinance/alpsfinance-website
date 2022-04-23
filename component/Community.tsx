@@ -14,7 +14,13 @@ const Community: FC<Props> = (props) => {
   return (
     <Box sx={{ mb: "3rem" }}>
       <Grid item>
-        <Typography variant="h4" fontWeight={600} align="center" my={3}>
+        <Typography
+          variant="h4"
+          fontWeight={600}
+          align="center"
+          my={3}
+          color="secondary"
+        >
           <b>Community</b>
         </Typography>
       </Grid>

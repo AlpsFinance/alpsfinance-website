@@ -121,7 +121,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
         justifyContent="center"
         alignItems="center"
         spacing={3}
-        sx={{ mb: 3, color: "#fff" }}
+        sx={{ color: "#fff" }}
       >
         <Grid item sm={12}>
           <Typography variant="h4" fontWeight={600} align="center">
@@ -134,7 +134,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
-        mb={5}
+        mb={3}
       >
         <Box
           display="flex"
@@ -145,16 +145,13 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             width: "100%",
             color: "#ffffff",
             maxWidth: "768px",
-            padding: "2rem",
+            padding: "1rem",
           }}
         >
           <Box>
-            <Typography variant="h6" fontWeight={600} align="left" mb={2}>
-              <b>Token Data:</b>
-            </Typography>
             <Box display="flex" alignItems="center" mb={1}>
               <Typography variant="subtitle1" color="#fff" width="150px">
-                Ticker:
+                Ticker
               </Typography>
               <Typography variant="subtitle1" color="#fff" fontWeight={600}>
                 <b>ALPS</b>
@@ -162,23 +159,27 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
               <Typography variant="subtitle1" color="#fff" width="150px">
-                Total supply:
+                Total supply
               </Typography>
               <Typography variant="subtitle1">
-                5,000,000,000 (Five Billion)
+                <b>5,000,000,000 (Five Billion)</b>
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
               <Typography variant="subtitle1" color="#fff" width="150px">
-                Platform:
+                Platform
               </Typography>
-              <Typography variant="subtitle1">Avalanche C-Chain</Typography>
+              <Typography variant="subtitle1">
+                <b>Avalanche C-Chain</b>
+              </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>
               <Typography variant="subtitle1" color="#fff" width="150px">
-                Token type:
+                Token type
               </Typography>
-              <Typography variant="subtitle1">ERC20</Typography>
+              <Typography variant="subtitle1">
+                <b>ERC20</b>
+              </Typography>
             </Box>
           </Box>
           <Box

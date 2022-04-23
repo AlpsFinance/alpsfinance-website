@@ -68,14 +68,26 @@ const CustomAppBar: FC = () => {
   ];
   const list = (anchor: String) => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ maxWidth: 250, width: "100vw", p: 3 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <Box sx={{ flexGrow: 8 }}>
+        <AlpsLogo fillColor="#20264d" />
+      </Box>
       <List sx={{}}>
         {menus.map((menu, index) => (
-          <ListItem button key={index}>
+          <ListItem
+            button
+            key={index}
+            sx={{
+              pl: 0,
+              ...(index !== menus.length - 1 && {
+                borderBottom: "1px solid #c7c9c8",
+              }),
+            }}
+          >
             <ListItemText
               primary={menu.name}
               onClick={() => {
@@ -89,13 +101,14 @@ const CustomAppBar: FC = () => {
       </List>
       <List>
         <Button
-          color="inherit"
+          color="primary"
           variant="contained"
+          size="large"
+          fullWidth
           sx={{
-            borderRadius: 30,
-            color: "backgroundColor='#25284B'",
-            background: "white",
-            ml: 1,
+            borderRadius: 3,
+            color: "white",
+            backgroundColor: "#25284B",
             fontWeight: "bold",
           }}
           onClick={() => {
@@ -192,16 +205,12 @@ const CustomAppBar: FC = () => {
         )}
       </Toolbar>
       <Drawer
-        anchor={"right"}
+        anchor="left"
         open={isOpen}
-        onClose={toggleDrawer("right", false)}
-        PaperProps={{
-          sx: {
-            backgroundColor: "#C8CACB",
-          },
-        }}
+        onClose={toggleDrawer("left", false)}
+        PaperProps={{ sx: { borderTopRightRadius: 15 } }}
       >
-        {list("right")}
+        {list("left")}
       </Drawer>
     </AppBar>
   );

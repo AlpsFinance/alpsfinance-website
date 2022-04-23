@@ -66,7 +66,6 @@ const Home: NextPage = () => {
                     }
                   : {
                       pt: 10,
-                      pb: 5,
                       px: 3,
                     }
               }
@@ -79,7 +78,7 @@ const Home: NextPage = () => {
                 }}
               >
                 <Grid container alignItems="center" justifyContent="center">
-                  <Typography variant={isLargeScreen ? "h3" : "h5"}>
+                  <Typography variant={isLargeScreen ? "h4" : "h5"}>
                     <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
                       Decentralized Social Investing
                     </b>
