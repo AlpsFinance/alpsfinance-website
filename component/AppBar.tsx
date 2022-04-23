@@ -4,13 +4,20 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import AlpsLogo from "./AlpsLogo";
-import { Drawer, Grid, Link } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { Menu } from "@mui/icons-material";
+import Menu from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
+import { useTheme } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const CustomAppBar: FC = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isYOffsetMoreThan100, setIsYOffsetMoreThan100] =
     useState<boolean>(false);
@@ -36,8 +43,8 @@ const CustomAppBar: FC = () => {
   const handleScroll = useCallback(() => {
     const position = window.pageYOffset;
     // eslint-disable-next-line no-mixed-operators
-    if (position >= 100 !== isYOffsetMoreThan100) {
-      setIsYOffsetMoreThan100(position >= 100);
+    if (position >= 50 !== isYOffsetMoreThan100) {
+      setIsYOffsetMoreThan100(position >= 50);
     }
   }, [isYOffsetMoreThan100]);
 
@@ -119,83 +126,70 @@ const CustomAppBar: FC = () => {
       sx={{
         pt: 1.5,
         pb: 1.5,
-        pl: 3.5,
+        px: isLargeScreen ? 3.5 : 1,
         backgroundColor: isYOffsetMoreThan100 ? "white" : "transparent",
         transition: "0.3s",
         ...(isYOffsetMoreThan100 && {
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         }),
-        "@media (min-width: 780px)": {
-          pr: 3.5,
-        },
       }}
     >
       <Toolbar>
-        <Box sx={{ flexGrow: 3 }}>
+        <Box sx={{ flexGrow: 8 }}>
           <AlpsLogo fillColor={isYOffsetMoreThan100 ? "#20264d" : "white"} />
         </Box>
         {menus
           .filter((menu) => menu.name !== "Home")
-          .map((menu, index) => (
-            <Link
-              key={index}
-              underline={"none"}
-              color={isYOffsetMoreThan100 ? "#20264d" : "white"}
-              href={menu.url}
-              sx={{
-                pr: 3,
-                flexGrow: 1,
-                fontWeight: "bold",
-
-                "@media (max-width: 780px)": {
-                  display: "none",
-                },
-              }}
-            >
-              {menu.name}
-            </Link>
-          ))}
-        <Button
-          color="inherit"
-          variant="contained"
-          sx={{
-            borderRadius: 30,
-            color: "#25284B",
-            backgroundColor: "white",
-            py: 1,
-            px: 8,
-            fontWeight: "bold",
-            "@media (max-width: 780px)": {
-              display: "none",
-            },
-          }}
-          onClick={() => {
-            const AlpsFinanceAppURL = "https://app.alps.finance";
-            window.open(AlpsFinanceAppURL, "_blank") ||
-              window.location.replace(AlpsFinanceAppURL);
-          }}
-        >
-          Launch App
-        </Button>
-        <Grid
-          container
-          justifyContent="right"
-          alignItems="right"
-          sx={{
-            "@media (min-width: 780px)": {
-              display: "none",
-            },
-          }}
-        >
-          <Grid item>
-            <Button
-              onClick={toggleDrawer("right", true)}
-              sx={{ color: "white" }}
-            >
-              <Menu />
-            </Button>
+          .map(
+            (menu, index) =>
+              isLargeScreen && (
+                <Link
+                  key={index}
+                  underline={"none"}
+                  color={isYOffsetMoreThan100 ? "#20264d" : "white"}
+                  href={menu.url}
+                  sx={{
+                    flexGrow: 1,
+                    fontWeight: "bold",
+                  }}
+                >
+                  {menu.name}
+                </Link>
+              )
+          )}
+        {isLargeScreen ? (
+          <Button
+            color="inherit"
+            variant="contained"
+            sx={{
+              borderRadius: 3,
+              color: isYOffsetMoreThan100 ? "white" : "#25284B",
+              backgroundColor: isYOffsetMoreThan100 ? "#25284B" : "white",
+              py: 1,
+              px: 5,
+              fontWeight: "bold",
+            }}
+            onClick={() => {
+              const AlpsFinanceAppURL = "https://app.alps.finance";
+              window.open(AlpsFinanceAppURL, "_blank") ||
+                window.location.replace(AlpsFinanceAppURL);
+            }}
+          >
+            Launch App
+          </Button>
+        ) : (
+          <Grid container justifyContent="right" alignItems="right">
+            <Grid item>
+              <IconButton
+                onClick={toggleDrawer("right", true)}
+                sx={{ color: isYOffsetMoreThan100 ? "#25284B" : "white" }}
+                size="large"
+              >
+                <Menu />
+              </IconButton>
+            </Grid>
           </Grid>
-        </Grid>
+        )}
       </Toolbar>
       <Drawer
         anchor={"right"}

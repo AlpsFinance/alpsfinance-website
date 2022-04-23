@@ -252,7 +252,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           sx={{ ml: isLargeScreen ? 1 : 0, mb: 3, mt: isLargeScreen ? 0 : 5 }}
         >
           <Typography variant={isLargeScreen ? "h4" : "h6"} fontWeight={600}>
-            Why Choose Alps Finance?
+            Why Alps Finance?
           </Typography>
         </Grid>
         <Grid
