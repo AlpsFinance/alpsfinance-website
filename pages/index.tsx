@@ -45,11 +45,9 @@ const Home: NextPage = () => {
           spacing={0}
           alignItems="center"
           justifyContent="center"
-          pt={isLargeScreen ? 10 : 3}
+          pt={isLargeScreen ? 7 : 3}
           sx={{
             color: "white",
-            pb: 5,
-            mb: 0,
           }}
           flexDirection="column"
         >
@@ -62,9 +60,7 @@ const Home: NextPage = () => {
               spacing={2}
               sx={
                 isLargeScreen
-                  ? {
-                      height: "50vh",
-                    }
+                  ? {}
                   : {
                       pt: 0,
                       pb: 5,
