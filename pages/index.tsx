@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import styles from "../styles/Home.module.css";
 import AppBar, { AppBarMode } from "../component/AppBar";
 import WhyAlpsFinance from "../component/WhyAlpsFinance";
 import Roadmap from "../component/Roadmap";
@@ -29,7 +28,6 @@ const Home: NextPage = () => {
           name="description"
           content="Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today."
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppBar mode={AppBarMode.HOME} />
       <Box

@@ -163,7 +163,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
                 Total supply
               </Typography>
               <Typography variant="subtitle1">
-                <b>5,000,000,000 (Five Billion)</b>
+                <b>5,000,000,000</b>
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={1}>

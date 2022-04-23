@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/system";
@@ -13,6 +14,13 @@ const FAQ: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>FAQ | Alps Finance</title>
+        <meta
+          name="description"
+          content="Here are the list of most frequently asked questions in Alps Finance."
+        />
+      </Head>
       <AppBar />
       <Grid container mt="88px" direction="column">
         <Grid item>
