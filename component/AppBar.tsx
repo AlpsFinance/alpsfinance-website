@@ -1,4 +1,5 @@
 import { FC, useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/router";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,9 +16,20 @@ import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const CustomAppBar: FC = () => {
+export enum AppBarMode {
+  HOME,
+  DEFAULT,
+}
+
+export interface CustomAppBarProps {
+  mode?: AppBarMode;
+}
+
+const CustomAppBar: FC<CustomAppBarProps> = (props) => {
+  const { mode = AppBarMode.DEFAULT } = props;
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isYOffsetMoreThan100, setIsYOffsetMoreThan100] =
     useState<boolean>(false);
@@ -50,20 +62,18 @@ const CustomAppBar: FC = () => {
 
   const menus = [
     {
-      name: "Home",
-      url: "",
-    },
-    {
       name: "Whitepaper",
       url: "https://storageapi.fleek.co/yosephks-team-bucket/AlpsFinanceWhitepaper.pdf",
+      newTab: true,
     },
     {
       name: "Documentation",
       url: "https://docs.alps.finance/",
+      newTab: true,
     },
     {
       name: "FAQs",
-      url: "",
+      url: "/faq",
     },
   ];
   const list = (anchor: String) => (
@@ -76,28 +86,33 @@ const CustomAppBar: FC = () => {
       <Box sx={{ flexGrow: 8 }}>
         <AlpsLogo fillColor="#20264d" />
       </Box>
-      <List sx={{}}>
-        {menus.map((menu, index) => (
-          <ListItem
-            button
-            key={index}
-            sx={{
-              pl: 0,
-              ...(index !== menus.length - 1 && {
-                borderBottom: "1px solid #c7c9c8",
-              }),
-            }}
-          >
-            <ListItemText
-              primary={menu.name}
-              onClick={() => {
-                const AlpsFinanceAppURL = menu.url;
-                window.open(AlpsFinanceAppURL, "_blank") ||
-                  window.location.replace(AlpsFinanceAppURL);
+      <List>
+        {menus.map((menu, index) => {
+          const { name, url, newTab } = menu;
+          return (
+            <ListItem
+              button
+              key={index}
+              sx={{
+                pl: 0,
+                ...(index !== menus.length - 1 && {
+                  borderBottom: "1px solid #c7c9c8",
+                }),
               }}
-            />
-          </ListItem>
-        ))}
+            >
+              <ListItemText
+                primary={name}
+                onClick={() => {
+                  if (newTab) {
+                    window.open(url, "_blank") || window.location.replace(url);
+                  } else {
+                    router.push(url);
+                  }
+                }}
+              />
+            </ListItem>
+          );
+        })}
       </List>
       <List>
         <Button
@@ -140,16 +155,30 @@ const CustomAppBar: FC = () => {
         pt: 1.5,
         pb: 1.5,
         px: isLargeScreen ? 3.5 : 1,
-        backgroundColor: isYOffsetMoreThan100 ? "white" : "transparent",
+        backgroundColor:
+          mode === AppBarMode.DEFAULT ||
+          (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+            ? "white"
+            : "transparent",
         transition: "0.3s",
-        ...(isYOffsetMoreThan100 && {
+        ...((mode === AppBarMode.DEFAULT ||
+          (isYOffsetMoreThan100 && mode === AppBarMode.HOME)) && {
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         }),
       }}
     >
       <Toolbar>
-        <Box sx={{ flexGrow: 8 }}>
-          <AlpsLogo fillColor={isYOffsetMoreThan100 ? "#20264d" : "white"} />
+        <Box sx={{ flexGrow: 8 }} onClick={() => router.push("/")}>
+          <div style={{ cursor: "pointer", width: "38px" }}>
+            <AlpsLogo
+              fillColor={
+                mode === AppBarMode.DEFAULT ||
+                (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+                  ? "#20264d"
+                  : "white"
+              }
+            />
+          </div>
         </Box>
         {menus
           .filter((menu) => menu.name !== "Home")
@@ -159,7 +188,12 @@ const CustomAppBar: FC = () => {
                 <Link
                   key={index}
                   underline={"none"}
-                  color={isYOffsetMoreThan100 ? "#20264d" : "white"}
+                  color={
+                    mode === AppBarMode.DEFAULT ||
+                    (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+                      ? "#20264d"
+                      : "white"
+                  }
                   href={menu.url}
                   sx={{
                     flexGrow: 1,
@@ -172,12 +206,25 @@ const CustomAppBar: FC = () => {
           )}
         {isLargeScreen ? (
           <Button
-            color={isYOffsetMoreThan100 ? "primary" : "inherit"}
+            color={
+              mode === AppBarMode.DEFAULT ||
+              (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+                ? "primary"
+                : "inherit"
+            }
             variant="contained"
             sx={{
               borderRadius: 3,
-              color: isYOffsetMoreThan100 ? "white" : "#25284B",
-              backgroundColor: isYOffsetMoreThan100 ? "#25284B" : "white",
+              color:
+                mode === AppBarMode.DEFAULT ||
+                (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+                  ? "white"
+                  : "#25284B",
+              backgroundColor:
+                mode === AppBarMode.DEFAULT ||
+                (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+                  ? "#25284B"
+                  : "white",
               py: 1,
               px: 5,
               fontWeight: "bold",
@@ -195,7 +242,13 @@ const CustomAppBar: FC = () => {
             <Grid item>
               <IconButton
                 onClick={toggleDrawer("right", true)}
-                sx={{ color: isYOffsetMoreThan100 ? "#25284B" : "white" }}
+                sx={{
+                  color:
+                    mode === AppBarMode.DEFAULT ||
+                    (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
+                      ? "#25284B"
+                      : "white",
+                }}
                 size="large"
               >
                 <Menu />

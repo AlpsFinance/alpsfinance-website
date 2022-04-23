@@ -3,14 +3,14 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import Button from "@mui/material/Button";
+import { useTheme } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { FaDiscord } from "react-icons/fa";
 
-interface Props {
-  isLargeScreen: Boolean;
-}
+const Community: FC = () => {
+  const { breakpoints } = useTheme();
+  const isLargeScreen = useMediaQuery(breakpoints.up("md"));
 
-const Community: FC<Props> = (props) => {
-  const { isLargeScreen } = props;
   return (
     <Box sx={{ mb: "3rem" }}>
       <Grid item>

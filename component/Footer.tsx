@@ -110,7 +110,9 @@ const Footer: FC = () => {
           sx={{ mt: 1 }}
         >
           <Grid item>
-            <Typography variant="body2">&copy; 2021 Alps Labs</Typography>
+            <Typography variant="body2">
+              &copy; {new Date().getFullYear()} Alps Labs. All Rights Reserved.
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

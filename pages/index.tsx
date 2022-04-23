@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import styles from "../styles/Home.module.css";
-import AppBar from "../component/AppBar";
+import AppBar, { AppBarMode } from "../component/AppBar";
 import WhyAlpsFinance from "../component/WhyAlpsFinance";
 import Roadmap from "../component/Roadmap";
 import Community from "../component/Community";
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppBar />
+      <AppBar mode={AppBarMode.HOME} />
       <Box
         style={{
           backgroundPosition: "center",

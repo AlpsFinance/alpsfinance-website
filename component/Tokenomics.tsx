@@ -81,7 +81,7 @@ const options: ApexOptions = {
   },
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 900,
       options: {
         chart: {
           width: "100%",

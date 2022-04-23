@@ -42,19 +42,19 @@ const gridData = [
     src: "/setting.svg",
     alt: "Easy Account Management Icon",
     header: "Easy Account Management",
-    body: "Simple user interface to manage your DeFi investments in multiple wallets, smart contract wallets, and DAOs.",
+    body: "Simple user interface to manage your cross-chain DeFi investments in multiple wallets, smart contract wallets, and DAOs.",
   },
   {
     src: "/integration.svg",
     alt: "DeFi Integration Icon",
     header: "DeFi Integration",
-    body: "Integration with numerous DeFi protocols across different blockchains.",
+    body: "Integration with numerous cross-chain DeFi protocols across different blockchains.",
   },
   {
     src: "/database.svg",
     alt: "Multi-Asset Icon",
     header: "Multi-Asset",
-    body: "Invest in unlimited options of DeFi products and take advantage of DeFi's money lego feature to the maximum from single dashboard.",
+    body: "Invest in unlimited options of cross-chain DeFi products and take advantage of DeFi's money lego feature to the maximum from single dashboard.",
   },
   {
     src: "/marketplace.svg",
