@@ -241,28 +241,6 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                 opportunity to connect, follow, engage, learn and compete with
                 other users who are investing through our platform.
               </Typography>
-              <Button
-                color="inherit"
-                variant="contained"
-                sx={{
-                  borderRadius: 30,
-                  color: "#25284B",
-                  backgroundColor: "white",
-                  py: isLargeScreen ? 2 : 1,
-                  px: 4,
-                  fontWeight: "bold",
-                  width: "fit-content",
-                  mt: 2,
-                  textTransform: "none",
-                }}
-                onClick={() => {
-                  const AlpsFinanceAppURL = "https://app.alps.finance";
-                  window.open(AlpsFinanceAppURL, "_blank") ||
-                    window.location.replace(AlpsFinanceAppURL);
-                }}
-              >
-                Launch The dApp
-              </Button>
             </Grid>
           </Grid>
           {isLargeScreen ? showLargePhone(true) : showSmallPhone()}

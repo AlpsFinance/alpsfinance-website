@@ -30,6 +30,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <AppBar />
       <Box
         style={{
           backgroundPosition: "center",
@@ -39,13 +40,12 @@ const Home: NextPage = () => {
             : "url(/alps-bg.png)",
         }}
       >
-        <AppBar />
         <Grid
           container
           spacing={0}
           alignItems="center"
           justifyContent="center"
-          pt={isLargeScreen ? 7 : 3}
+          pt={isLargeScreen ? 20 : 3}
           sx={{
             color: "white",
           }}
