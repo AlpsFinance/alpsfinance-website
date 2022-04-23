@@ -18,7 +18,7 @@ import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <div className={styles.container}>
@@ -62,12 +62,12 @@ const Home: NextPage = () => {
               sx={
                 isLargeScreen
                   ? {
-                      px: 25,
+                      width: "65vw",
                     }
                   : {
-                      pt: 0,
+                      pt: 10,
                       pb: 5,
-                      mx: 3,
+                      px: 3,
                     }
               }
             >
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                 }}
               >
                 <Grid container alignItems="center" justifyContent="center">
-                  <Typography variant={isLargeScreen ? "h3" : "h4"}>
+                  <Typography variant={isLargeScreen ? "h3" : "h5"}>
                     <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
                       Decentralized Social Investing
                     </b>

@@ -91,10 +91,10 @@ const getGridStructure = (
         borderRadius: "3px",
       }}
       mb={2}
-      pb={2}
+      py={1}
       mr={isLargeScreen ? 1 : 0}
     >
-      <Grid container spacing={2}>
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item>
           <ButtonBase
             sx={{
