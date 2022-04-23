@@ -110,8 +110,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
 
   return (
     <Box
-      mb={0}
-      pb={2}
+      py={3}
       sx={{
         background: `linear-gradient(to right top, ${palette.primary.main}, ${palette.secondary.main})`,
       }}
@@ -122,7 +121,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
         justifyContent="center"
         alignItems="center"
         spacing={3}
-        sx={{ mb: 2, color: "#fff" }}
+        sx={{ mb: 3, color: "#fff" }}
       >
         <Grid item sm={12}>
           <Typography variant="h4" fontWeight={600} align="center">
@@ -205,12 +204,8 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             height: isLargeScreen ? "fit-content" : "700px",
             pl: isLargeScreen ? 0 : "1rem",
             pr: isLargeScreen ? 0 : "2rem",
-            ml: "2rem",
           }}
         >
-          <Typography variant="h6" fontWeight={600} align="left" mb={2}>
-            <b>Token Distribution:</b>
-          </Typography>
           <ReactApexChart options={options} series={series} type="donut" />
         </Box>
       </Box>

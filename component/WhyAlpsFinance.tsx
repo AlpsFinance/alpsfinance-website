@@ -139,7 +139,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
   const { isLargeScreen, isMediumScreen } = props;
   return (
     <Box>
-      <Grid
+      {/* <Grid
         container
         sx={{
           backgroundColor: "#2D325A",
@@ -186,7 +186,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           </Grid>
         </Grid>
         {isLargeScreen ? null : showSmallPhone()}
-      </Grid>
+      </Grid> */}
       <Box
         sx={{
           backgroundImage: isMediumScreen ? "url(bg.jpg)" : "url(bg.jpg)",
@@ -194,9 +194,9 @@ const WhyAlpsFinance: FC<Props> = (props) => {
           backgroundSize: "cover",
         }}
         color="white"
-        pb={isLargeScreen ? 10 : 0}
+        py={3}
       >
-        <Grid
+        {/* <Grid
           container
           sx={{ pl: isLargeScreen ? 7 : 5, pr: 4, mt: isLargeScreen ? 0 : 0 }}
           spacing={3}
@@ -244,12 +244,12 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             </Grid>
           </Grid>
           {isLargeScreen ? showLargePhone(true) : showSmallPhone()}
-        </Grid>
+        </Grid> */}
         <Grid
           container
           justifyContent="center"
           alignItems="start"
-          sx={{ ml: isLargeScreen ? 1 : 0, mb: 3, mt: isLargeScreen ? 0 : 5 }}
+          sx={{ ml: isLargeScreen ? 1 : 0 }}
         >
           <Typography variant={isLargeScreen ? "h4" : "h6"} fontWeight={600}>
             Why Alps Finance?

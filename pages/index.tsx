@@ -13,8 +13,8 @@ import Community from "../component/Community";
 import Footer from "../component/Footer";
 import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
-import { Box } from "@mui/material";
-import AlpsTokenPresale from "../component/AlpsTokenPresale";
+import Box from "@mui/material/Box";
+// import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
   const theme = useTheme();
@@ -108,19 +108,19 @@ const Home: NextPage = () => {
           </Grid>
           <Grid item>
             <Image
-              src={isLargeScreen ? "/alps-desktop.png" : "/phone.png"}
+              src="/alps-desktop.png"
               alt="Picture of Alps Finance UI"
-              width={isLargeScreen ? 948 : 271}
-              height={isLargeScreen ? 600 : 552}
+              width={isLargeScreen ? 948 : 350}
+              height={isLargeScreen ? 600 : 200}
             />
           </Grid>
         </Grid>
       </Box>
-      <AlpsTokenPresale isLargeScreen={isLargeScreen} />
+      {/* <AlpsTokenPresale isLargeScreen={isLargeScreen} /> */}
       <WhyAlpsFinance isLargeScreen={isLargeScreen} />
       <Roadmap isLargeScreen={isLargeScreen} />
-      <Community isLargeScreen={isLargeScreen} />
       <Tokenomics isLargeScreen={isLargeScreen} />
+      <Community isLargeScreen={isLargeScreen} />
       <Footer />
     </div>
   );
