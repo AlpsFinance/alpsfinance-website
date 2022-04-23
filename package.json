@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "alpsfinance-website",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -20,6 +20,7 @@
     "chart.js": "^3.7.1",
     "next": "12.0.7",
     "next-images": "^1.8.4",
+    "next-pwa": "^5.5.2",
     "react": "17.0.2",
     "react-apexcharts": "^1.3.9",
     "react-chartjs-2": "^4.0.1",

@@ -208,6 +208,7 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             pr: isLargeScreen ? 0 : "2rem",
           }}
         >
+          {/* @ts-ignore */}
           <ReactApexChart options={options} series={series} type="donut" />
         </Box>
       </Box>
