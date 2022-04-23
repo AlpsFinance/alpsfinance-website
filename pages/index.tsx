@@ -56,14 +56,18 @@ const Home: NextPage = () => {
               container
               direction="column"
               justifyContent="center"
+              alignItems="center"
               textAlign="center"
               spacing={2}
               sx={
                 isLargeScreen
-                  ? {}
+                  ? {
+                      px: 25,
+                    }
                   : {
                       pt: 0,
                       pb: 5,
+                      mx: 3,
                     }
               }
             >
@@ -74,15 +78,15 @@ const Home: NextPage = () => {
                   color: "#FFFFFF",
                 }}
               >
-                <Typography
-                  variant={isLargeScreen ? "h3" : "h4"}
-                  sx={{ fontFamily: "Press Start 2P" }}
-                >
-                  <b>Decentralized Social Investing</b>
-                </Typography>
+                <Grid container alignItems="center" justifyContent="center">
+                  <Typography variant={isLargeScreen ? "h3" : "h4"}>
+                    <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
+                      Decentralized Social Investing
+                    </b>
+                  </Typography>
+                </Grid>
               </Grid>
               <Grid
-                container
                 item
                 sx={{
                   padding: "10px",
@@ -91,12 +95,9 @@ const Home: NextPage = () => {
                 }}
               >
                 <Typography
-                  align={"center"}
+                  align="center"
                   variant={isLargeScreen ? "h5" : "body1"}
                   mx={0}
-                  sx={{
-                    width: "60%",
-                  }}
                 >
                   Alps is the simplest way to build and manage your entire DeFi
                   + NFT portfolio across multiple chains from one dashboard.
