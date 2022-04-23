@@ -3,7 +3,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { useTheme } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import styles from "../styles/Home.module.css";
@@ -119,31 +118,6 @@ const Home: NextPage = () => {
             />
           </Grid>
         </Grid>
-        <Grid
-                item
-                justifyContent='center'
-                alignItems='center'
-                xs={0}
-                md={0}
-                sx={{
-                  padding:'2rem',
-                }}
-                onClick={() => {
-                  const AlpsFinanceAppURL = "https://app.alps.finance";
-                  window.open(AlpsFinanceAppURL, "_blank") ||
-                    window.location.replace(AlpsFinanceAppURL);
-                }}
-                container
-              >
-              <Button sx={{
-                borderRadius: 30,
-                color: "#25284B",
-                backgroundColor: "white",
-                py: 1,
-                px:8,
-                fontWeight: "bold",
-              }}>Launch App</Button>
-              </Grid>
       </Box>
       <AlpsTokenPresale isLargeScreen={isLargeScreen} />
       <WhyAlpsFinance isLargeScreen={isLargeScreen} />
