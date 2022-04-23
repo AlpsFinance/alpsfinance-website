@@ -158,7 +158,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             justifyContent="center"
             style={{
               minHeight: isLargeScreen ? "60vh" : "auto",
-              paddingTop: "7rem",
+              paddingTop: "2rem",
               paddingLeft: isLargeScreen ? "5rem" : "0rem",
             }}
           >
@@ -176,6 +176,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                 color: "#ffffff",
                 fontSize: "1.5rem",
                 paddingTop: "2rem",
+                paddingBottom:'3rem',
               }}
             >
               As we are converging to a multi-chain world, we shall be trying
@@ -185,7 +186,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             </Typography>
           </Grid>
         </Grid>
-        {isLargeScreen ? null : showSmallPhone()}
+        {isLargeScreen ? null : null}
       </Grid>
       <Box
         sx={{
@@ -216,7 +217,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
               style={{
                 minHeight: isLargeScreen ? "60vh" : "auto",
                 paddingTop: "7rem",
-                paddingBottom: "4rem",
+                paddingBottom: "2rem",
               }}
             >
               <Typography
@@ -232,7 +233,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
                 justifyContent="center"
                 sx={{
                   fontSize: "1.5rem",
-                  paddingTop: "2rem",
+                  paddingTop: "0rem",
                 }}
               >
                 We believe in the power of community, which is why a core
@@ -243,7 +244,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
               </Typography>
             </Grid>
           </Grid>
-          {isLargeScreen ? showLargePhone(true) : showSmallPhone()}
+          {isLargeScreen ? showLargePhone(true) : null}
         </Grid>
         <Grid
           container

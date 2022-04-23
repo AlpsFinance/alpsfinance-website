@@ -70,6 +70,7 @@ const Home: NextPage = () => {
               <Grid
                 item
                 sx={{
+                  marginTop:'4rem',
                   fontFamily: "'Poppins', sans-serif",
                   color: "#FFFFFF",
                 }}
@@ -107,10 +108,11 @@ const Home: NextPage = () => {
           </Grid>
           <Grid item>
             <Image
-              src={isLargeScreen ? "/alps-desktop.png" : "/phone.png"}
-              alt="Picture of Alps Finance UI"
-              width={isLargeScreen ? 948 : 271}
-              height={isLargeScreen ? 600 : 552}
+              src="/alps-desktop.png"
+              alt="Picture of alps finance ui"
+              width={isLargeScreen ? 948 : 500}
+              height={isLargeScreen ? 600 : 500}
+              
             />
           </Grid>
         </Grid>
