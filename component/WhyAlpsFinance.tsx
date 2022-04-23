@@ -163,7 +163,7 @@ const WhyAlpsFinance: FC<Props> = (props) => {
             }}
           >
             <Typography
-              variant={"h4"}
+              variant="h4"
               fontWeight={600}
               sx={{ mb: 0, color: "#ffffff" }}
               textAlign="center"

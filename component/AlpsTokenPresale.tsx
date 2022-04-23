@@ -38,19 +38,24 @@ const AlpsTokenPresale: FC<Props> = (props) => {
         <Grid item>
           <Grid
             container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
+            direction='column'
+            justifyContent='center'
+            alignItems='center'
           >
             <Typography
-              variant="h2"
+              variant='h4'
               fontWeight={600}
               sx={{ mb: 1, pb: 3 }}
-              align="center"
+              align='center'
             >
               $ALPS Token
             </Typography>
-            <Typography align="center">
+            <Typography
+              align='center'
+              sx={{
+                fontSize: "1.5rem",
+              }}
+            >
               $Alps Token is the native utility token of the Alps Finance
               platform which gives you the opportunity to stake in order to earn
               more of the token; get reduced fees for holding our token; earn
