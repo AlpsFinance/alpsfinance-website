@@ -1,8 +1,6 @@
 import { FC, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-// import { Doughnut } from "react-chartjs-2";
 import { Box, Grid, Typography } from "@mui/material";
-// import ReactApexChart from "react-apexcharts";
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 import Image from "next/image";
@@ -106,7 +104,7 @@ interface Props {
 }
 
 const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
-  const [series, setSeries] = useState<number[]>([15, 5, 5, 10, 10, 5, 25, 25]);
+  const [series] = useState<number[]>([15, 5, 5, 10, 10, 5, 25, 25]);
 
   return (
     <Box
@@ -118,29 +116,29 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
     >
       <Grid
         container
-        direction='column'
-        justifyContent='center'
-        alignItems='center'
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
         spacing={3}
         sx={{ mb: 2, color: "#fff" }}
       >
         <Grid item sm={12}>
-          <Typography variant='h4' fontWeight={600} align='center'>
+          <Typography variant="h4" fontWeight={600} align="center">
             <b>Tokenomics</b>
           </Typography>
         </Grid>
       </Grid>
       <Box
-        display='flex'
-        justifyContent='center'
-        alignItems='center'
-        flexDirection='column'
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
         mb={5}
       >
         <Box
-          display='flex'
-          justifyContent='space-between'
-          alignItems='center'
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
           mb={5}
           sx={{
             width: "100%",
@@ -150,58 +148,50 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
           }}
         >
           <Box>
-            <Typography variant='h6' fontWeight={600} align='left' mb={2}>
+            <Typography variant="h6" fontWeight={600} align="left" mb={2}>
               <b>Token Data:</b>
             </Typography>
-            <Box display='flex' alignItems='center' mb={1}>
-              <Typography variant='subtitle1' color='#fff' width='150px'>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#fff" width="150px">
                 Token Ticker:
               </Typography>
-              <Typography variant='subtitle1' color='#fff' fontWeight={600}>
+              <Typography variant="subtitle1" color="#fff" fontWeight={600}>
                 <b>Alps Token</b>
               </Typography>
             </Box>
-            <Box display='flex' alignItems='center' mb={1}>
-              <Typography variant='subtitle1' color='#fff' width='150px'>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#fff" width="150px">
                 Total supply:
               </Typography>
-              <Typography variant='subtitle1'>
+              <Typography variant="subtitle1">
                 5,000,000,000 (Five Billion)
               </Typography>
             </Box>
-            <Box display='flex' alignItems='center' mb={1}>
-              <Typography variant='subtitle1' color='#fff' width='150px'>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#fff" width="150px">
                 Platform:
               </Typography>
-              <Typography variant='subtitle1'>Avalanche C-Chain</Typography>
+              <Typography variant="subtitle1">Avalanche C-Chain</Typography>
             </Box>
-            <Box display='flex' alignItems='center' mb={1}>
-              <Typography variant='subtitle1' color='#fff' width='150px'>
+            <Box display="flex" alignItems="center" mb={1}>
+              <Typography variant="subtitle1" color="#fff" width="150px">
                 Token type:
               </Typography>
-              <Typography variant='subtitle1'>ERC20</Typography>
-            </Box>
-            <Box display='flex' alignItems='center' mb={1}>
-              <Typography variant='subtitle1' color='#fff' width='150px'>
-                Explorer:
-              </Typography>
-              <Typography variant='subtitle1' color='orange'>
-                https://ftmscan.com/
-              </Typography>
+              <Typography variant="subtitle1">ERC20</Typography>
             </Box>
           </Box>
           <Box
-            width='40%'
-            height='260px'
-            position='relative'
+            width="40%"
+            height="260px"
+            position="relative"
             style={{ transform: "scale(1.5)" }}
             display={isLargeScreen ? "block" : "none"}
           >
             <Image
-              src='/tokenomicsBg.svg'
-              alt='Picture of Tokenomics'
-              layout='fill'
-              objectFit='contain'
+              src="/tokenomicsBg.svg"
+              alt="Picture of Tokenomics"
+              layout="fill"
+              objectFit="contain"
             />
           </Box>
         </Box>
@@ -216,10 +206,10 @@ const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
             ml: "2rem",
           }}
         >
-          <Typography variant='h6' fontWeight={600} align='left' mb={2}>
+          <Typography variant="h6" fontWeight={600} align="left" mb={2}>
             <b>Token Distribution:</b>
           </Typography>
-          <ReactApexChart options={options} series={series} type='donut' />
+          <ReactApexChart options={options} series={series} type="donut" />
         </Box>
       </Box>
     </Box>
