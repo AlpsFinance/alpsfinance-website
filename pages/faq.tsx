@@ -4,9 +4,36 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AppBar from "../component/AppBar";
 import Footer from "../component/Footer";
 import Community from "../component/Community";
+
+const faqList = [
+  {
+    question: "What is Alps Finance?",
+    answer: "",
+  },
+  {
+    question: "What is DeFi?",
+    answer: "",
+  },
+  {
+    question: "What is Crytpo Wallet?",
+    answer: "",
+  },
+  {
+    question: "How to invest DeFi in Alps Finance",
+    answer: "",
+  },
+  {
+    question: "Is Alps Finance open-source?",
+    answer: "Yes. You can check our GitHub",
+  },
+];
 
 const FAQ: NextPage = () => {
   const { palette, breakpoints } = useTheme();
@@ -52,10 +79,31 @@ const FAQ: NextPage = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item sx={{ py: 20 }}>
-          <Typography variant={isLargeScreen ? "h4" : "h5"} align="center">
-            🚧 Page Under Constructions. 🚧
+        <Grid item sx={{ py: 10, px: isLargeScreen ? 10 : 3 }}>
+          <Typography
+            variant={isLargeScreen ? "h4" : "h5"}
+            align="center"
+            mb={3}
+          >
+            🚧 Page Under Constructions 🚧
           </Typography>
+          {faqList.map((faq, index) => {
+            const { answer, question } = faq;
+            return (
+              <Accordion elevation={3} key={index}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>{question}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>{answer}</Typography>
+                </AccordionDetails>
+              </Accordion>
+            );
+          })}
         </Grid>
       </Grid>
       <Community />
