@@ -10,7 +10,7 @@ const gridData = [
   {
     src: "/bi-lock.svg",
     alt: "Asset Ownership",
-    header: "Data Ownership and Privacy",
+    header: "Asset Ownership",
     body: "Full asset control and ownership that is censorship resistant from any third-party.",
   },
   {
