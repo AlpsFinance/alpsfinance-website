@@ -1,36 +1,11 @@
-import { FC, Key } from "react";
+import { FC } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-interface Props {
-  isLargeScreen: Boolean;
-  isMediumScreen?: Boolean;
-}
-
-const showLargePhone = (isRight = false) => {
-  return (
-    <Grid item p={0} ml={isRight ? 0 : "2rem"} mt={"3rem"} lg={0}>
-      <Image
-        src={"/alps-transparent.png"}
-        alt="Phone sample"
-        width={550}
-        height={600}
-      />
-    </Grid>
-  );
-};
-const showSmallPhone = () => {
-  return (
-    <Grid item xs={12} p={0}>
-      <Grid container justifyContent="center" alignItems="center" pt={1}>
-        <Image src={"/phone.png"} alt="Phone sample" width={271} height={552} />
-      </Grid>
-    </Grid>
-  );
-};
 const gridData = [
   {
     src: "/bi-lock.svg",
@@ -122,9 +97,9 @@ const getGridStructure = (
     </Grid>
   );
 };
-const WhyAlpsFinance: FC<Props> = (props) => {
-  const { isLargeScreen, isMediumScreen } = props;
-  const { palette } = useTheme();
+const WhyAlpsFinance: FC = () => {
+  const { palette, breakpoints } = useTheme();
+  const isLargeScreen = useMediaQuery(breakpoints.up("md"));
 
   return (
     <Box>

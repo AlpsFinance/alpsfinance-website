@@ -1,22 +1,21 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Box, Button } from "@mui/material";
-import { calculateTimeLeft } from "../utility/helper";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
+// import { calculateTimeLeft } from "../utility/helper";
 
-interface Props {
-  isLargeScreen: Boolean;
-}
-
-const AlpsTokenPresale: FC<Props> = (props) => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const { isLargeScreen } = props;
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearTimeout(timer);
-  });
+const AlpsTokenPresale: FC = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setTimeLeft(calculateTimeLeft());
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // });
 
   return (
     <Box
@@ -38,20 +37,20 @@ const AlpsTokenPresale: FC<Props> = (props) => {
         <Grid item>
           <Grid
             container
-            direction='column'
-            justifyContent='center'
-            alignItems='center'
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
           >
             <Typography
-              variant='h4'
+              variant="h4"
               fontWeight={600}
               sx={{ mb: 1, pb: 3 }}
-              align='center'
+              align="center"
             >
               $ALPS Token
             </Typography>
             <Typography
-              align='center'
+              align="center"
               sx={{
                 fontSize: "1.5rem",
               }}

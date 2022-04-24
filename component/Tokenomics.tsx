@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 import Image from "next/image";
 import { useTheme } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
@@ -100,12 +101,9 @@ const options: ApexOptions = {
   ],
 };
 
-interface Props {
-  isLargeScreen: Boolean;
-}
-
-const Tokenomics: FC<Props> = ({ isLargeScreen }) => {
-  const { palette } = useTheme();
+const Tokenomics: FC = () => {
+  const { palette, breakpoints } = useTheme();
+  const isLargeScreen = useMediaQuery(breakpoints.up("md"));
   const [series] = useState<number[]>([15, 5, 5, 10, 10, 5, 25, 25]);
 
   return (

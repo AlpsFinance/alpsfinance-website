@@ -3,10 +3,8 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import { styled } from "@mui/material/styles";
-
-interface Props {
-  isLargeScreen: Boolean;
-}
+import { useTheme } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Item = styled(Box)(({ theme }) => ({
   backgroundColor: "#2D325A",
@@ -17,8 +15,9 @@ const Item = styled(Box)(({ theme }) => ({
   minHeight: "520px",
 }));
 
-const Roadmap: FC<Props> = (props) => {
-  const { isLargeScreen } = props;
+const Roadmap: FC = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <div style={{ paddingTop: 24, paddingBottom: 24 }}>

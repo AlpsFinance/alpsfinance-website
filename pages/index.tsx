@@ -138,10 +138,10 @@ const Home: NextPage = () => {
           )}
         </Grid>
       </Box>
-      {/* <AlpsTokenPresale isLargeScreen={isLargeScreen} /> */}
-      <WhyAlpsFinance isLargeScreen={isLargeScreen} />
-      <Roadmap isLargeScreen={isLargeScreen} />
-      <Tokenomics isLargeScreen={isLargeScreen} />
+      {/* <AlpsTokenPresale /> */}
+      <WhyAlpsFinance />
+      <Roadmap />
+      <Tokenomics />
       <Community />
       <Footer />
     </div>
