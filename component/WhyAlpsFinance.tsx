@@ -160,55 +160,6 @@ const WhyAlpsFinance: FC = () => {
         color="white"
         py={5}
       >
-        {/* <Grid
-          container
-          sx={{ pl: isLargeScreen ? 7 : 5, pr: 4, mt: isLargeScreen ? 0 : 0 }}
-          spacing={3}
-        >
-          <Grid
-            item
-            lg={6}
-            xs={12}
-            ml={isLargeScreen ? "8rem" : 0}
-            mr={isLargeScreen ? 0 : "2rem"}
-          >
-            <Grid
-              container
-              spacing={0}
-              // direction='column'
-              justifyContent="center"
-              style={{
-                minHeight: isLargeScreen ? "60vh" : "auto",
-                paddingTop: "7rem",
-                paddingBottom: "4rem",
-              }}
-            >
-              <Typography
-                variant="h4"
-                fontWeight={600}
-                sx={{ mb: 3 }}
-                textAlign="center"
-              >
-                Community
-              </Typography>
-              <Typography
-                textAlign="center"
-                justifyContent="center"
-                sx={{
-                  fontSize: "1.5rem",
-                  paddingTop: "2rem",
-                }}
-              >
-                We believe in the power of community, which is why a core
-                component of our platform is enabling connection and interaction
-                with other users. You are not alone as we are giving you the
-                opportunity to connect, follow, engage, learn and compete with
-                other users who are investing through our platform.
-              </Typography>
-            </Grid>
-          </Grid>
-          {isLargeScreen ? showLargePhone(true) : showSmallPhone()}
-        </Grid> */}
         <Grid
           container
           justifyContent="center"

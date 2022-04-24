@@ -14,6 +14,7 @@ import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import AlpsFeatures from "../component/AlpsFeatures";
 // import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
@@ -140,6 +141,7 @@ const Home: NextPage = () => {
       </Box>
       {/* <AlpsTokenPresale /> */}
       <WhyAlpsFinance />
+      <AlpsFeatures />
       <Roadmap />
       <Tokenomics />
       <Community />
