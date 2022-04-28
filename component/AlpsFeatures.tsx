@@ -74,7 +74,10 @@ const AlpsFeatures: FC = () => {
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography variant="subtitle1">
+                        <Typography
+                          variant="subtitle1"
+                          sx={{ fontFamily: "'Quicksand', sans-serif" }}
+                        >
                           {description}
                         </Typography>
                       </Grid>

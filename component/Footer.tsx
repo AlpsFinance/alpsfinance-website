@@ -110,7 +110,10 @@ const Footer: FC = () => {
           sx={{ mt: 1 }}
         >
           <Grid item>
-            <Typography variant="body2">
+            <Typography
+              variant="body2"
+              sx={{ fontFamily: "'Quicksand', sans-serif" }}
+            >
               &copy; {new Date().getFullYear()} Alps Labs. All Rights Reserved.
             </Typography>
           </Grid>

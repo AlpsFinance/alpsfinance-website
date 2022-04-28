@@ -64,11 +64,7 @@ const FAQ: NextPage = () => {
             }}
           >
             <Grid item>
-              <Typography
-                variant={isLargeScreen ? "h2" : "h4"}
-                align="center"
-                sx={{ fontFamily: "'Press Start 2P', cursive" }}
-              >
+              <Typography variant={isLargeScreen ? "h2" : "h4"} align="center">
                 <b>FAQ</b>
               </Typography>
             </Grid>

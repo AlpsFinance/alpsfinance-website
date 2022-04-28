@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
             rel="stylesheet"
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}

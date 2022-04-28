@@ -34,7 +34,11 @@ const Community: FC = () => {
       </Grid>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={10} md={6}>
-          <Typography variant={isLargeScreen ? "h6" : "body1"} align="center">
+          <Typography
+            variant={isLargeScreen ? "h6" : "body1"}
+            align="center"
+            sx={{ fontFamily: "'Quicksand', sans-serif" }}
+          >
             Learn more about Alps Finance, chat with the team, others in the
             community, and have your say in shaping the future of decentralized
             social investing.

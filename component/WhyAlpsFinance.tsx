@@ -91,7 +91,12 @@ const getGridStructure = (
           </Typography>
         </Grid>
         <Grid item>
-          <Typography align="center">{grid.body}</Typography>
+          <Typography
+            align="center"
+            sx={{ fontFamily: "'Quicksand', sans-serif" }}
+          >
+            {grid.body}
+          </Typography>
         </Grid>
       </Grid>
     </Grid>
