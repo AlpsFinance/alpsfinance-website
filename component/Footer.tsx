@@ -8,7 +8,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { SvgIconTypeMap } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { FaDiscord, FaMedium, FaInstagram } from "react-icons/fa";
+import { FaMedium, FaInstagram } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { useTheme } from "@mui/system";
 

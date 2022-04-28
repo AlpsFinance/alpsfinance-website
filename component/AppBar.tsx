@@ -102,6 +102,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
             >
               <ListItemText
                 primary={name}
+                sx={{}}
                 onClick={() => {
                   if (newTab) {
                     window.open(url, "_blank") || window.location.replace(url);
@@ -125,6 +126,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
             color: "white",
             backgroundColor: "#25284B",
             fontWeight: "bold",
+            background: "linear-gradient(to right, #597DFD, #B091F9)",
           }}
           onClick={() => {
             const AlpsFinanceAppURL = "https://app.alps.finance";
@@ -155,11 +157,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
         pt: 1.5,
         pb: 1.5,
         px: isLargeScreen ? 3.5 : 1,
-        backgroundColor:
-          mode === AppBarMode.DEFAULT ||
-          (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-            ? "white"
-            : "transparent",
+        backgroundColor: "white",
         transition: "0.3s",
         ...((mode === AppBarMode.DEFAULT ||
           (isYOffsetMoreThan100 && mode === AppBarMode.HOME)) && {
@@ -170,14 +168,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
       <Toolbar>
         <Box sx={{ flexGrow: 8 }} onClick={() => router.push("/")}>
           <div style={{ cursor: "pointer", width: "38px" }}>
-            <AlpsLogo
-              fillColor={
-                mode === AppBarMode.DEFAULT ||
-                (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-                  ? "#20264d"
-                  : "white"
-              }
-            />
+            <AlpsLogo fillColor="#20264d" />
           </div>
         </Box>
         {menus
@@ -188,12 +179,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
                 <Link
                   key={index}
                   underline={"none"}
-                  color={
-                    mode === AppBarMode.DEFAULT ||
-                    (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-                      ? "#20264d"
-                      : "white"
-                  }
+                  color="#20264d"
                   href={menu.url}
                   sx={{
                     flexGrow: 1,
@@ -206,28 +192,14 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
           )}
         {isLargeScreen ? (
           <Button
-            color={
-              mode === AppBarMode.DEFAULT ||
-              (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-                ? "primary"
-                : "inherit"
-            }
+            color="primary"
             variant="contained"
             sx={{
               borderRadius: 3,
-              color:
-                mode === AppBarMode.DEFAULT ||
-                (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-                  ? "white"
-                  : "#25284B",
-              backgroundColor:
-                mode === AppBarMode.DEFAULT ||
-                (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-                  ? "#25284B"
-                  : "white",
               py: 1,
               px: 5,
               fontWeight: "bold",
+              background: "linear-gradient(to right, #597DFD, #B091F9)",
             }}
             onClick={() => {
               const AlpsFinanceAppURL = "https://app.alps.finance";
@@ -243,11 +215,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
               <IconButton
                 onClick={toggleDrawer("right", true)}
                 sx={{
-                  color:
-                    mode === AppBarMode.DEFAULT ||
-                    (isYOffsetMoreThan100 && mode === AppBarMode.HOME)
-                      ? "#25284B"
-                      : "white",
+                  color: "#25284B",
                 }}
                 size="large"
               >

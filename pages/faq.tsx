@@ -36,7 +36,7 @@ const faqList = [
 ];
 
 const FAQ: NextPage = () => {
-  const { palette, breakpoints } = useTheme();
+  const { breakpoints } = useTheme();
   const isLargeScreen = useMediaQuery(breakpoints.up("md"));
 
   return (
@@ -60,7 +60,7 @@ const FAQ: NextPage = () => {
             sx={{
               py: 5,
               color: "white",
-              background: `linear-gradient(to right top, ${palette.primary.main}, ${palette.secondary.main})`,
+              background: `linear-gradient(to right, #597DFD, #B091F9)`,
             }}
           >
             <Grid item>

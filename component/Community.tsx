@@ -21,7 +21,16 @@ const Community: FC = () => {
           my={3}
           color="secondary"
         >
-          <b>Community</b>
+          <b
+            style={{
+              background: "linear-gradient(to right, #597DFD, #B091F9)",
+              // @ts-ignore
+              webkitBackgroundClip: "text",
+              webkitTextFillColor: "transparent",
+            }}
+          >
+            Community
+          </b>
         </Typography>
       </Grid>
       <Grid container justifyContent="center" alignItems="center">
@@ -49,6 +58,7 @@ const Community: FC = () => {
                   fontWeight: "bold",
                   width: "fit-content",
                   textTransform: "none",
+                  background: "linear-gradient(to right, #597DFD, #B091F9)",
                 }}
                 onClick={() => {
                   const AlpsFinanceAppURL = "https://discord.gg/zXbpgZSzCD";

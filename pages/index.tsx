@@ -12,7 +12,6 @@ import Community from "../component/Community";
 import Footer from "../component/Footer";
 import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import AlpsFeatures from "../component/AlpsFeatures";
 
@@ -30,40 +29,28 @@ const Home: NextPage = () => {
         />
       </Head>
       <AppBar mode={AppBarMode.HOME} />
-      <Box
+      <Grid
+        container
+        alignItems="center"
+        pt={isLargeScreen ? 0 : 0}
         sx={{
-          py: 3,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundImage: isLargeScreen
-            ? "url(/alps-bg.png)"
-            : "url(/alps-bg.png)",
+          color: "white",
+          px: isLargeScreen ? 5 : 3,
+          background: "linear-gradient(to right, #597DFD, #B091F9)",
+          height: "calc(100vh)",
         }}
       >
-        <Grid
-          container
-          spacing={0}
-          alignItems="center"
-          justifyContent="center"
-          pt={isLargeScreen ? 20 : 0}
-          sx={{
-            color: "white",
-          }}
-          flexDirection="column"
-        >
-          <Grid item xs={12}>
+        <Grid container alignItems="center" mt={isLargeScreen ? "80px" : 0}>
+          <Grid item xs={12} md={4}>
             <Grid
               container
               direction="column"
               justifyContent="center"
               alignItems="center"
-              textAlign="center"
               spacing={2}
               sx={
                 isLargeScreen
-                  ? {
-                      width: "65vw",
-                    }
+                  ? {}
                   : {
                       pt: 10,
                       px: 3,
@@ -94,8 +81,8 @@ const Home: NextPage = () => {
                 }}
               >
                 <Typography
-                  align="center"
-                  variant={isLargeScreen ? "h5" : "body1"}
+                  align={isLargeScreen ? "left" : "center"}
+                  variant={isLargeScreen ? "h6" : "body1"}
                   mx={0}
                 >
                   Alps is the simplest way to build and manage your entire DeFi
@@ -105,39 +92,20 @@ const Home: NextPage = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <Image
-              src="/alps-desktop.png"
-              alt="Picture of Alps Finance UI"
-              width={isLargeScreen ? 948 : 350}
-              height={isLargeScreen ? 600 : 200}
-            />
-          </Grid>
-          {!isLargeScreen && (
-            <Grid item xs={12} sx={{ width: "100vw", px: 10 }}>
-              <Button
-                color="inherit"
-                variant="contained"
-                size="large"
-                fullWidth
-                sx={{
-                  borderRadius: 3,
-                  backgroundColor: "white",
-                  color: "#25284B",
-                  fontWeight: "bold",
-                }}
-                onClick={() => {
-                  const AlpsFinanceAppURL = "https://app.alps.finance";
-                  window.open(AlpsFinanceAppURL, "_blank") ||
-                    window.location.replace(AlpsFinanceAppURL);
-                }}
-              >
-                Launch App
-              </Button>
+          <Grid item xs={12} md={8}>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Image
+                  src="/app/desktop.png"
+                  alt="Picture of Alps Finance UI"
+                  width={850}
+                  height={550}
+                />
+              </Grid>
             </Grid>
-          )}
+          </Grid>
         </Grid>
-      </Box>
+      </Grid>
       <WhyAlpsFinance />
       <AlpsFeatures />
       <Roadmap />
