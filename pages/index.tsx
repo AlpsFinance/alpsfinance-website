@@ -15,7 +15,6 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import AlpsFeatures from "../component/AlpsFeatures";
-// import AlpsTokenPresale from "../component/AlpsTokenPresale";
 
 const Home: NextPage = () => {
   const theme = useTheme();
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Alps Finance | Decentralized Social Investing Platform</title>
+        <title>Alps Finance | All-in-one Social + DeFi</title>
         <meta
           name="description"
           content="Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today."
@@ -81,7 +80,7 @@ const Home: NextPage = () => {
                 <Grid container alignItems="center" justifyContent="center">
                   <Typography variant={isLargeScreen ? "h4" : "h5"}>
                     <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
-                      Decentralized Social Investing
+                      Social + DeFi
                     </b>
                   </Typography>
                 </Grid>
@@ -139,7 +138,6 @@ const Home: NextPage = () => {
           )}
         </Grid>
       </Box>
-      {/* <AlpsTokenPresale /> */}
       <WhyAlpsFinance />
       <AlpsFeatures />
       <Roadmap />

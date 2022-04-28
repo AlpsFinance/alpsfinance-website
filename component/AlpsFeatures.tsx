@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const featuresList = [
   {
-    title: "Cross-Chain, Cross-Platform",
+    title: "Cross-Chain DeFi Dashboard",
     description: `
       As we are converging to a cross-chain world, our platform will 
       be offering multiple blockchain support by default. Furthermore, 
