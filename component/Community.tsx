@@ -24,9 +24,8 @@ const Community: FC = () => {
           <b
             style={{
               background: "linear-gradient(to right, #597DFD, #B091F9)",
-              // @ts-ignore
-              webkitBackgroundClip: "text",
-              webkitTextFillColor: "transparent",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             Community
