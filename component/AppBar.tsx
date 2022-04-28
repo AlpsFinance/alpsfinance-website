@@ -15,6 +15,7 @@ import Menu from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Typography from "@mui/material/Typography";
 
 export enum AppBarMode {
   HOME,
@@ -101,8 +102,6 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
               }}
             >
               <ListItemText
-                primary={name}
-                sx={{}}
                 onClick={() => {
                   if (newTab) {
                     window.open(url, "_blank") || window.location.replace(url);
@@ -110,7 +109,20 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
                     router.push(url);
                   }
                 }}
-              />
+              >
+                <Typography
+                  sx={{
+                    transition: "1s",
+                    "&:hover": {
+                      background: "linear-gradient(to right, #597DFD, #B091F9)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    },
+                  }}
+                >
+                  {name}
+                </Typography>
+              </ListItemText>
             </ListItem>
           );
         })}
@@ -171,25 +183,34 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
             <AlpsLogo fillColor="#20264d" />
           </div>
         </Box>
-        {menus
-          .filter((menu) => menu.name !== "Home")
-          .map(
-            (menu, index) =>
-              isLargeScreen && (
-                <Link
-                  key={index}
-                  underline={"none"}
-                  color="#20264d"
-                  href={menu.url}
+        {isLargeScreen &&
+          menus
+            .filter((menu) => menu.name !== "Home")
+            .map((menu, index) => (
+              <Link
+                key={index}
+                underline={"none"}
+                color="#20264d"
+                href={menu.url}
+                sx={{
+                  flexGrow: 1,
+                  fontWeight: "bold",
+                }}
+              >
+                <Typography
                   sx={{
-                    flexGrow: 1,
-                    fontWeight: "bold",
+                    transition: "1s",
+                    "&:hover": {
+                      background: "linear-gradient(to right, #597DFD, #B091F9)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    },
                   }}
                 >
                   {menu.name}
-                </Link>
-              )
-          )}
+                </Typography>
+              </Link>
+            ))}
         {isLargeScreen ? (
           <Button
             color="primary"

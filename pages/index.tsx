@@ -12,6 +12,8 @@ import Community from "../component/Community";
 import Footer from "../component/Footer";
 import Tokenomics from "../component/Tokenomics";
 import Image from "next/image";
+import Fade from "@mui/material/Fade";
+import Slide from "@mui/material/Slide";
 import Button from "@mui/material/Button";
 import AlpsFeatures from "../component/AlpsFeatures";
 
@@ -32,7 +34,6 @@ const Home: NextPage = () => {
       <Grid
         container
         alignItems="center"
-        pt={isLargeScreen ? 0 : 0}
         sx={{
           color: "white",
           px: isLargeScreen ? 5 : 3,
@@ -40,7 +41,12 @@ const Home: NextPage = () => {
           height: "calc(100vh)",
         }}
       >
-        <Grid container alignItems="center" mt={isLargeScreen ? "80px" : 0}>
+        <Grid
+          container
+          alignItems="center"
+          mt={isLargeScreen ? "80px" : 0}
+          spacing={isLargeScreen ? 0 : 2}
+        >
           <Grid item xs={12} md={4}>
             <Grid
               container
@@ -64,18 +70,28 @@ const Home: NextPage = () => {
                   color: "#FFFFFF",
                 }}
               >
-                <Grid container alignItems="center" justifyContent="center">
-                  <Typography
-                    variant={isLargeScreen ? "h4" : "h5"}
-                    align={isLargeScreen ? "left" : "center"}
-                  >
-                    <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
-                      Social + DeFi
-                    </b>
-                  </Typography>
-                </Grid>
+                <Slide
+                  direction="right"
+                  in
+                  mountOnEnter
+                  unmountOnExit
+                  timeout={1000}
+                >
+                  <Grid container alignItems="center" justifyContent="center">
+                    <Typography
+                      variant={isLargeScreen ? "h4" : "h5"}
+                      align="center"
+                    >
+                      <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
+                        Social <br />
+                        + <br />
+                        DeFi
+                      </b>
+                    </Typography>
+                  </Grid>
+                </Slide>
               </Grid>
-              <Grid
+              {/* <Grid
                 item
                 sx={{
                   padding: "10px",
@@ -92,21 +108,56 @@ const Home: NextPage = () => {
                   + NFT portfolio across multiple chains from one dashboard.
                   Explore the world of decentralized finance today.
                 </Typography>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
           <Grid item xs={12} md={8}>
             <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Image
-                  src="/app/desktop.png"
-                  alt="Picture of Alps Finance UI"
-                  width={850}
-                  height={550}
-                />
-              </Grid>
+              <Fade in timeout={1000}>
+                <Grid item>
+                  <Image
+                    src="/app/desktop.png"
+                    alt="Picture of Alps Finance UI"
+                    width={850}
+                    height={550}
+                  />
+                </Grid>
+              </Fade>
             </Grid>
           </Grid>
+          {!isLargeScreen && (
+            <Grid item xs={12}>
+              <Button
+                color="primary"
+                variant="contained"
+                fullWidth
+                sx={{
+                  borderRadius: 3,
+                  py: 1,
+                  px: 5,
+                  fontWeight: "bold",
+                  background: "white",
+                }}
+                onClick={() => {
+                  const AlpsFinanceAppURL = "https://app.alps.finance";
+                  window.open(AlpsFinanceAppURL, "_blank") ||
+                    window.location.replace(AlpsFinanceAppURL);
+                }}
+              >
+                <Typography>
+                  <b
+                    style={{
+                      background: "linear-gradient(to right, #597DFD, #B091F9)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    Launch App
+                  </b>
+                </Typography>
+              </Button>
+            </Grid>
+          )}
         </Grid>
       </Grid>
       <WhyAlpsFinance />
