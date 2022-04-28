@@ -65,7 +65,10 @@ const Home: NextPage = () => {
                 }}
               >
                 <Grid container alignItems="center" justifyContent="center">
-                  <Typography variant={isLargeScreen ? "h4" : "h5"}>
+                  <Typography
+                    variant={isLargeScreen ? "h4" : "h5"}
+                    align={isLargeScreen ? "left" : "center"}
+                  >
                     <b style={{ fontFamily: "'Press Start 2P', cursive" }}>
                       Social + DeFi
                     </b>
