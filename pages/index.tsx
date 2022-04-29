@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
+import Script from "next/script";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/system";
@@ -11,7 +13,6 @@ import Roadmap from "../component/Roadmap";
 import Community from "../component/Community";
 import Footer from "../component/Footer";
 import Tokenomics from "../component/Tokenomics";
-import Image from "next/image";
 import Fade from "@mui/material/Fade";
 import Slide from "@mui/material/Slide";
 import Button from "@mui/material/Button";
@@ -31,6 +32,15 @@ const Home: NextPage = () => {
           content="Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today."
         />
       </Head>
+      <Script id='google-tag-manager' strategy='afterInteractive'>
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PM2VXFC');
+        `}
+      </Script>
       <AppBar mode={AppBarMode.HOME} />
       <Grid
         container
