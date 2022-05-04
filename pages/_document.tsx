@@ -24,6 +24,14 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
             rel="stylesheet"
           />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:site' content='@AlpsFinance' />
+          <meta name='twitter:title' content='Alps Finance | All-in-one Social + DeFi' />
+          <meta
+            name='twitter:description'
+            content='Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today'
+          />
+          <meta name='twitter:image' content='https://www.alps.finance/twitter-preview.png' />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}
         </Head>

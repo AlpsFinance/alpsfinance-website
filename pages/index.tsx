@@ -2,7 +2,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Script from "next/script";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/system";
@@ -31,24 +30,7 @@ const Home: NextPage = () => {
           name="description"
           content="Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today."
         />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@AlpsFinance' />
-        <meta name='twitter:title' content='Alps Finance | All-in-one Social + DeFi' />
-        <meta
-          name='twitter:description'
-          content='Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today'
-        />
-        <meta name='twitter:image' content='https://www.alps.finance/features/multichain.png' />
       </Head>
-      <Script id='google-tag-manager' strategy='afterInteractive'>
-        {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-PM2VXFC');
-        `}
-      </Script>
       <AppBar mode={AppBarMode.HOME} />
       <Grid
         container
