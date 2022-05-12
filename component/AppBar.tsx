@@ -64,7 +64,7 @@ const CustomAppBar: FC<CustomAppBarProps> = (props) => {
   const menus = [
     {
       name: "Whitepaper",
-      url: "https://storageapi.fleek.co/yosephks-team-bucket/AlpsFinanceWhitepaper.pdf",
+      url: "https://bafybeicbnpddcfdabegmy6milptcczyukne766xstjvq7e3q3hyobfrt7i.ipfs.nftstorage.link/",
       newTab: true,
     },
     {
