@@ -25,10 +25,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Alps Finance | All-in-one Social + DeFi</title>
+        <title>Alps Finance | All-in-one SocialFi</title>
         <meta
           name="description"
-          content="Alps Finance is the simplest way to build and manage your entire DeFi + NFT portfolio across multiple chains from one dashboard. Explore the world of decentralized finance today."
+          content="Alps Finance is a SocialFi platform for DeFi investors to build their own investing community and reputation easily. Build your investing community today!"
         />
       </Head>
       <AppBar mode={AppBarMode.HOME} />
