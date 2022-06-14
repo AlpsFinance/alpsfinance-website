@@ -26,10 +26,10 @@ export default class MyDocument extends Document {
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:site' content='@AlpsFinance' />
-          <meta name='twitter:title' content='Alps Finance | All-in-one SocialFi' />
+          <meta name='twitter:title' content='Alps Finance | Social DeFi Investing Platform' />
           <meta
             name='twitter:description'
-            content="Alps Finance is a SocialFi platform for DeFi investors to build their own investing community and reputation easily. Build your investing community today!"
+            content="Alps Finance is a social DeFi investing platform for DeFi investors to build their own investing community and reputation easily. Build your investing community today!"
           />
           <meta name='twitter:image' content='https://www.alps.finance/twitter-preview.png' />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
